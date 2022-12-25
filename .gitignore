@@ -1,0 +1,10 @@
+.idea
+.DS_Store
+.infection
+.phpunit.cache
+coverage
+dist
+test.php
+vendor
+var
+composer.lock

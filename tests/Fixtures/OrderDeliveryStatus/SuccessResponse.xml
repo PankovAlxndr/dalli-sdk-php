@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<statusreq count="2">
+    <order orderno="79807" ordercode="6846828" givencode="A5913655" awb="A5913655">
+        <barcode>A5913655</barcode>
+        <receiver>
+            <company>Евлампий Зигмундович</company>
+            <person>Евлампий Зигмундович</person>
+            <phone>+70000000000</phone>
+            <town>Санкт-Петербург город</town>
+            <address>Выборгское шоссе,13, кв.офис 1</address>
+            <date>2022-12-05</date>
+            <time_min>09:00</time_min>
+            <time_max>13:00</time_max>
+        </receiver>
+        <weight>2.05</weight>
+        <quantity>1</quantity>
+        <paytype>NO</paytype>
+        <service>11</service>
+        <price>0</price>
+        <inshprice>6785</inshprice>
+        <instruction>SPI</instruction>
+        <courier>
+            <code>1136</code>
+            <name>САНКТ-ПЕТЕРБУРГ</name>
+        </courier>
+        <deliveryprice total="375.77">
+            <advprice code="1" price="255">База</advprice>
+            <advprice code="5" price="50">Процент от объявленной стоимости</advprice>
+            <advprice code="269" price="0">Кассовое обслуживание</advprice>
+            <advprice code="451" price="5">СМС-уведомление Получателя</advprice>
+            <advprice code="2271" price="65.77">РКО для предоплаченных заказов</advprice>
+        </deliveryprice>
+        <status eventtime="2022-12-05 12:50:00" createtimegmt="2022-12-06 05:45:37" title="Доставлен">COMPLETE</status>
+        <statushistory>
+            <status eventstore="ДС-СПБ" eventtime="2022-12-05 12:50:00" createtimegmt="2022-12-06 05:45:37" title="Доставлен">COMPLETE</status>
+            <status eventstore="ДС-СПБ" eventtime="2022-12-05 12:50:00" createtimegmt="2022-12-05 09:50:38" title="Доставлен (предварительно)">COURIERDELIVERED</status>
+            <status eventstore="ДС-СПБ" eventtime="2022-12-05 08:36:49" createtimegmt="2022-12-05 05:36:49" title="Выдан курьеру на доставку">DELIVERY</status>
+            <status eventstore="ДС-СПБ" eventtime="2022-12-03 08:14:31" createtimegmt="2022-12-03 05:14:31" title="Получен складом">ACCEPTED</status>
+            <status eventstore="ДС-СПБ" eventtime="2022-12-02 19:50:05" createtimegmt="2022-12-02 16:50:05" title="Создан забор">NEWPICKUP</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-02 15:01:20" createtimegmt="2022-12-02 12:01:20" message="ДС-СПБ" title="Отправлено со склада">DEPARTURE</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-02 11:14:14" createtimegmt="2022-12-02 08:14:14" message="ДС-СПБ" title="Планируется отправка">DEPARTURING</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-01 22:12:59" createtimegmt="2022-12-01 19:12:59" title="Получен складом">ACCEPTED</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-01 16:17:43" createtimegmt="2022-12-01 13:17:43" title="Новый">NEW</status>
+            <status eventstore="ДС-СПБ" eventtime="2022-12-02 15:04:43" createtimegmt="" title="Забран у перевозчика">PICKUPTRANS</status>
+        </statushistory>
+        <department>2024</department>
+        <delivereddate>2022-12-05</delivereddate>
+        <deliveredtime>12:50:00</deliveredtime>
+        <receipt date_beg="2022-12-05 12:50:31" inn="7842152310" fnSn="7280440500032759" summ="6577" fdNum="48789" kktNum="0004781557016457" ofdUrl="kkt.ofd.yandex.net" fdValue="0541889653">https://ofd.yandex.ru/vaucher/11111/11111/11111</receipt>
+        <acta date=""></acta>
+        <costcode>9195_S1</costcode>
+        <items>
+            <item type="1" quantity="1" mass="0.5" retprice="2290" barcode="00000246" suppcompany="ИП тест" suppINN="780248482864" suppphone="Татьяна +7 (000)000-00-00" extcode="20745637">Фундук в темном шоколаде</item>
+            <item type="1" quantity="2" mass="0.5" retprice="1590" barcode="00000253" suppcompany="ИП тест" suppINN="780248482864" suppphone="Татьяна +7 (000)000-00-00" extcode="20745587">Восточный чернослив в темном шоколаде</item>
+            <item type="1" quantity="1" mass="0.1" retprice="695" barcode="00033473" suppcompany="ИП тест" suppINN="780248482864" suppphone="Татьяна +7 (000)000-00-00" extcode="20745642">Шоколад на миндальном молоке с листьями шпината молекулярной сушки</item>
+            <item type="1" quantity="1" mass="0.1" retprice="412" barcode="00001274" suppcompany="ИП тест" suppINN="780248482864" suppphone="Татьяна +7 (000)000-00-00" extcode="20745593">Шоколад на кокосовом молоке с соком облепихи и красного апельсина (без ягод)</item>
+            <item type="4" quantity="1" retprice="-6577" suppcompany="ИП тест" suppINN="780248482864" suppphone="Татьяна +7 (000)000-00-00" extcode="20745649">Предоплата</item>
+        </items>
+        <packages>
+            <package strbarcode="SNQ15280018800001" mass="1.42" length="1" width="1" height="1" />
+            <package strbarcode="SNQ15280018800002" mass="1.42" length="1" width="1" height="1" />
+        </packages>
+    </order>
+    <order orderno="79811" ordercode="6846818" givencode="A5913709" awb="A5913709">
+        <barcode>A5913709</barcode>
+        <receiver>
+            <company>ГОЛОВЧЕНКО ОКСАНА</company>
+            <person>Головченко Оксана</person>
+            <phone>+79853190971</phone>
+            <zipcode>115054</zipcode>
+            <town>Москва город</town>
+            <address>Валовая ул.,21 к125, кв.26</address>
+            <date>2022-12-03</date>
+            <time_min>14:00</time_min>
+            <time_max>21:00</time_max>
+        </receiver>
+        <weight>2.49</weight>
+        <quantity>1</quantity>
+        <paytype>NO</paytype>
+        <service>1</service>
+        <price>0</price>
+        <inshprice>6050</inshprice>
+        <enclosure>(МО)</enclosure>
+        <courier>
+            <code>2786</code>
+            <phone>+7010101010101</phone>
+            <name>Агафонов Демьян Сергеевич (Павелецкая, 50) Д/Д</name>
+        </courier>
+        <deliveryprice total="366.35">
+            <advprice code="1" price="235">База</advprice>
+            <advprice code="5" price="50">Процент от объявленной стоимости</advprice>
+            <advprice code="269" price="0">Кассовое обслуживание</advprice>
+            <advprice code="451" price="5">СМС-уведомление Получателя</advprice>
+            <advprice code="2204" price="25">Доставка внутри ТТК</advprice>
+            <advprice code="2271" price="51.35">РКО для предоплаченных заказов</advprice>
+        </deliveryprice>
+        <status eventtime="2022-12-03 20:22:00" createtimegmt="2022-12-04 04:25:03" title="Доставлен">COMPLETE</status>
+        <statushistory>
+            <status eventstore="Офис в Москве" eventtime="2022-12-03 20:22:00" createtimegmt="2022-12-04 04:25:03" title="Доставлен">COMPLETE</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-03 20:22:00" createtimegmt="2022-12-03 17:22:37" title="Доставлен (предварительно)">COURIERDELIVERED</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-03 18:45:03" createtimegmt="2022-12-03 15:45:03" title="Выдан курьеру на доставку">DELIVERY</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-03 09:12:38" createtimegmt="2022-12-03 06:12:38" title="Курьер вернул на склад">COURIERRETURN</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-03 08:59:58" createtimegmt="2022-12-03 05:59:58" title="Выдан курьеру на доставку">DELIVERY</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-01 22:12:14" createtimegmt="2022-12-01 19:12:14" title="Получен складом">ACCEPTED</status>
+            <status eventstore="Офис в Москве" eventtime="2022-12-01 16:17:43" createtimegmt="2022-12-01 13:17:43" title="Новый">NEW</status>
+        </statushistory>
+        <delivereddate>2022-12-03</delivereddate>
+        <deliveredtime>20:22:00</deliveredtime>
+        <receipt date_beg="2022-12-03 20:22:34" inn="7736662574" fnSn="7280440500022124" summ="5135" fdNum="20512" kktNum="0004759152007932" ofdUrl="ofdp.platformaofd.ru" fdValue="3911582366">https://lk.platformaofd.ru/web/noauth/cheque?fn=7280440500022124&amp;fp=3911582366&amp;i=20512</receipt>
+        <acta date="2022-12-05">297097</acta>
+        <items>
+            <item type="1" quantity="2" mass="0.1" retprice="650" barcode="00002325">Темный шоколад с нибсами какао бобов 82% &amp;#171;Черное золото&amp;#187;</item>
+            <item type="1" quantity="1" mass="0.3" retprice="1290" barcode="00224116">Горячий шоколад &amp;quot;Блаженство&amp;quot;</item>
+            <item type="1" quantity="1" mass="0.24" retprice="690" barcode="00001069">Паста из ядер семян конопли &amp;quot;Сила&amp;quot;</item>
+            <item type="1" quantity="1" mass="0.24" retprice="590" barcode="00000475">Паста из семян тыквы &amp;quot;Победа&amp;quot;</item>
+            <item type="1" quantity="1" mass="0.5" retprice="1265" barcode="00000253">Восточный чернослив в темном шоколаде</item>
+            <item type="4" quantity="1" retprice="-5135">Предоплата</item>
+        </items>
+    </order>
+</statusreq>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pointsInfo>
+    <point code="99631">
+        <name>Москва Ремизова_9963_С</name>
+        <settlement>Москва</settlement>
+        <town>Москва</town>
+        <address>117186, Москва г, Ремизова ул, д.10</address>
+        <addressReduce>Ремизова ул, 10 д</addressReduce>
+        <zipcode>117186</zipcode>
+        <description>Метро Нагорная.</description>
+        <onlyPrepaid>0</onlyPrepaid>
+        <acquiring>1</acquiring>
+        <EnableFitting>0</EnableFitting>
+        <workShedule>пн: 10:00-20:00 вт: 10:00-20:00 ср: 10:00-20:00 чт: 10:00-20:00 пт: 10:00-20:00 сб: 10:00-17:00 вс: 10:00-17:00</workShedule>
+        <GPS>55.676220,37.600658</GPS>
+        <phone>+7(499)391-56-22</phone>
+        <partner>BOXBERRY</partner>
+        <weightLimit>15</weightLimit>
+        <Metro>Нагорная</Metro>
+        <Street>Ремизова</Street>
+        <House>10</House>
+        <Structure></Structure>
+        <Housing></Housing>
+        <Apartment></Apartment>
+        <fias>0c5b2444-70a0-4932-980c-b4dc0d3f02b5</fias>
+        <zone>1М</zone>
+        <postamat>0</postamat>
+        <ldtime>2022-12-08 05:43:37</ldtime>
+    </point>
+    <point code="00592">
+        <name>Москва Защитников Москвы_00592_С</name>
+        <settlement>Москва</settlement>
+        <town>Москва</town>
+        <address>111674, Москва г, Защитников Москвы пр-кт, д.10</address>
+        <addressReduce>Защитников Москвы пр-кт, 10 д</addressReduce>
+        <zipcode>111674</zipcode>
+        <description>Метро - Некрасовка.
+            Ввыход из метро - 7.
+            Остановка - ул. Ухтомского Ополчения.
+            Расстояние от остановки до Отделения - 10 м.
+            Жилой 17-этажный дом.
+            Этаж - 1.
+            Отдельный вход с проспекта Защитников Москвы.
+            Зайти под веской - Ломбард.
+            КурьерСервисЭкспресс,.</description>
+        <onlyPrepaid>0</onlyPrepaid>
+        <acquiring>1</acquiring>
+        <EnableFitting>0</EnableFitting>
+        <workShedule>пн: 10:00-20:00 вт: 10:00-20:00 ср: 10:00-20:00 чт: 10:00-20:00 пт: 10:00-20:00 сб: 10:00-16:00 вс: 10:00-16:00</workShedule>
+        <GPS>55.700695,37.922390</GPS>
+        <phone>+7(499)391-56-22</phone>
+        <partner>BOXBERRY</partner>
+        <weightLimit>31</weightLimit>
+        <Metro>Некрасовка</Metro>
+        <Street>Защитников Москвы</Street>
+        <House>10</House>
+        <Structure></Structure>
+        <Housing></Housing>
+        <Apartment></Apartment>
+        <fias>0c5b2444-70a0-4932-980c-b4dc0d3f02b5</fias>
+        <zone>1М</zone>
+        <postamat>0</postamat>
+        <ldtime>2022-12-08 05:43:37</ldtime>
+    </point>
+</pointsInfo>

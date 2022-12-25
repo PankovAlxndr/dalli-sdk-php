@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deliverycost partner="DS" townto="Москва, Складочная 1 стр 18" zone="MSK">
+    <price service="1" price="255" delivery_period="0-1" msg="Доставка на следующий день после передачи заказа в курьерскую службу" zone="0" />
+    <price service="2" price="365" delivery_period="0-1" msg="Экспресс доставка день в день" zone="0" />
+    <price service="4" price="95" delivery_period="0-1" msg="Доставка на следующий день после передачи заказа в курьерскую службу" zone="0" />
+</deliverycost>

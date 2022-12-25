@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stickers>
+    <format>2</format>
+    <barcodes>
+        <barcode>A5960198</barcode>
+        <barcode>A5960199</barcode>
+    </barcodes>
+    <returnas>stream</returnas>
+</stickers>

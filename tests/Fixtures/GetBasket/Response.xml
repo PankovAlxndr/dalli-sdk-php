@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<getbasket count='3'>
+    <order number='sdk-004'>
+        <barcode>A6000774</barcode>
+        <receiver>
+            <town>Москва</town>
+            <address>ул. Мусы Джалиля, д.2 к1</address>
+            <person>Константин Константинопольский</person>
+            <phone>+7 000 000 00 00</phone>
+            <date>2022-12-23</date>
+            <time_min>18:00:00</time_min>
+            <time_max>22:00:00</time_max>
+        </receiver>
+        <service>1</service>
+        <weight>3.15</weight>
+        <quantity>1</quantity>
+        <paytype>CASH</paytype>
+        <priced>50.00</priced>
+        <price>150.00</price>
+        <inshprice>500.00</inshprice>
+        <upsnak>F</upsnak>
+        <instruction>Максимально аккуратно</instruction>
+        <acceptpartially>YES</acceptpartially>
+        <items>
+            <item quantity='2' weight='3.15' retprice='50.00' inshprice='5.00' barcode='' article='' VATrate='0' origincountry='RU' GTD='10702030' suppcompany='Компания поставщик' suppINN='3664069397' governmentCode='' type='1'>Моя тестовая товарная позиция</item>
+        </items>
+        <errors>
+            <error error='items' errorCode='26' errorMessage='Наложенный платеж не совпадает со стоимостью товарных позиций + стоимость доставки' />
+        </errors>
+    </order>
+    <order number='sdk-005'>
+        <barcode>A6000775</barcode>
+        <receiver>
+            <town>Москва</town>
+            <address>ул. Мусы Джалиля, д.2 к1</address>
+            <person>Константин Константинопольский</person>
+            <phone>+7 000 000 00 00</phone>
+            <date>2022-12-23</date>
+            <time_min>18:00:00</time_min>
+            <time_max>22:00:00</time_max>
+        </receiver>
+        <service>1</service>
+        <weight>3.15</weight>
+        <quantity>1</quantity>
+        <paytype>CASH</paytype>
+        <priced>50.00</priced>
+        <price>150.00</price>
+        <inshprice>500.00</inshprice>
+        <upsnak>F</upsnak>
+        <instruction>Максимально аккуратно</instruction>
+        <acceptpartially>YES</acceptpartially>
+        <items>
+            <item quantity='2' weight='3.15' retprice='50.00' inshprice='5.00' barcode='' article='' VATrate='0' origincountry='RU' GTD='10702030' suppcompany='Компания поставщик' suppINN='3664069397' governmentCode='' type='1'>Моя тестовая товарная позиция</item>
+        </items>
+        <errors>
+        </errors>
+    </order>
+    <order number='sdk-006'>
+        <barcode>A6000776</barcode>
+        <receiver>
+            <town>Москва</town>
+            <address>ул. Мусы Джалиля, д.2 к1</address>
+            <person>Константин Константинопольский</person>
+            <phone>+7 000 000 00 00</phone>
+            <date>2022-12-23</date>
+            <time_min>18:00:00</time_min>
+            <time_max>22:00:00</time_max>
+        </receiver>
+        <service>1</service>
+        <weight>3.15</weight>
+        <quantity>1</quantity>
+        <paytype>CASH</paytype>
+        <priced>50.00</priced>
+        <price>150.00</price>
+        <inshprice>500.00</inshprice>
+        <upsnak>F</upsnak>
+        <instruction>Максимально аккуратно</instruction>
+        <acceptpartially>YES</acceptpartially>
+        <items>
+            <item quantity='2' weight='3.15' retprice='50.00' inshprice='5.00' barcode='' article='' VATrate='0' origincountry='RU' GTD='10702030' suppcompany='Компания поставщик' suppINN='3664069397' governmentCode='' type='1'>Моя тестовая товарная позиция</item>
+        </items>
+        <errors>
+        </errors>
+    </order>
+</getbasket>

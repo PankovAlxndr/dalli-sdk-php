@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editbasket>
+    <order number='sdk-006'>
+        <error error='barcode' errorCode='37' errorMessage='Штрих-код не найден в корзине' />
+    </order>
+</editbasket>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rupostcreate>
+    <order number="123456">
+        <receiver>
+            <zipcode>121552</zipcode>
+            <town>Москва</town>
+            <address>Складочная 1 стр 18</address>
+            <to>Москва, Складочная 1 стр 18</to>
+            <person>Иванов И. И.</person>
+            <phone>+797777777777</phone>
+        </receiver>
+        <type>2</type>
+        <price>123.0</price>
+        <inshprice>123.0</inshprice>
+        <instruction>Передавайте привет</instruction>
+    </order>
+</rupostcreate>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<intervals count="6">
+    <interval type="basic" zone="1" service="1">
+        <time_min>9</time_min>
+        <time_max>13</time_max>
+    </interval>
+    <interval type="basic" zone="1" service="1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="1" service="1">
+        <time_min>10</time_min>
+        <time_max>22</time_max>
+    </interval>
+    <interval type="basic" zone="1" service="1">
+        <time_min>10</time_min>
+        <time_max>17</time_max>
+    </interval>
+    <interval type="basic" zone="1" service="1">
+        <time_min>18</time_min>
+        <time_max>22</time_max>
+    </interval>
+    <interval type="basic" zone="1" service="1">
+        <time_min>11</time_min>
+        <time_max>15</time_max>
+    </interval>
+    <interval type="client" zone="1" service="1">
+        <time_min>11</time_min>
+        <time_max>15</time_max>
+    </interval>
+</intervals>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rupostcreate>
+    <order number='123'>
+        <error error='number' errorCode='4' errorMessage='Указанный номер заказа уже есть в системе' />
+    </order>
+    <order number='123456' barcode='0708A654321'>
+        <error error='order' errorCode='0' errorMessage='Успешно' />
+    </order>
+</rupostcreate>

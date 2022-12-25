@@ -1,0 +1,124 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DalliSDK\Test\Integration;
+
+use DalliSDK\Enums\Partner;
+use DalliSDK\Models\Price;
+use DalliSDK\Requests\DeliveryCostRequest;
+use DalliSDK\Responses\DeliveryCostResponse;
+use DalliSDK\Test\Fixtures\FixturesLoader;
+
+class DeliveryCostTest extends SerializerTestCase
+{
+    public function testSuccessfulSerialization()
+    {
+        $xml = FixturesLoader::load('DeliveryCost/Request.xml');
+        $request = new DeliveryCostRequest();
+        $this->assertSame(DeliveryCostResponse::class, $request->getResponseClass());
+
+        $request->setPartner(Partner::SDEK)
+            ->setFias('0c5b2444-70a0-4932-980c-b4dc0d3f02b5')
+            ->setOblName('Ярославкая')
+            ->setWeight(25)
+            ->setPrice(500)
+            ->setInshprice(500)
+            ->setCashServices('YES')
+            ->setLength(50)
+            ->setWidth(50)
+            ->setHeight(50)
+            ->setTypeDelivery('PVZ')
+            ->setKladr('kladr')
+            ->setTo('to')
+            ->setTownTo('Town to')
+            ->setPvzCode('pvz code')
+            ->setCdekCityId(44)
+            ->setWithoutTax('YES')
+            ->setOutput('x2');
+
+        $this->assertSame(Partner::SDEK, $request->getPartner());
+        $this->assertSame('0c5b2444-70a0-4932-980c-b4dc0d3f02b5', $request->getFias());
+        $this->assertSame('Ярославкая', $request->getOblName());
+        $this->assertSame(25, $request->getWeight());
+        $this->assertSame(500, $request->getPrice());
+        $this->assertSame(500, $request->getInshprice());
+        $this->assertSame('YES', $request->getCashServices());
+        $this->assertSame(50, $request->getLength());
+        $this->assertSame(50, $request->getWidth());
+        $this->assertSame(50, $request->getHeight());
+        $this->assertSame('PVZ', $request->getTypeDelivery());
+        $this->assertSame('YES', $request->getWithoutTax());
+        $this->assertSame('x2', $request->getOutput());
+
+        $this->assertSame('kladr', $request->getKladr());
+        $this->assertSame('to', $request->getTo());
+        $this->assertSame('Town to', $request->getTownTo());
+        $this->assertSame('pvz code', $request->getPvzCode());
+        $this->assertSame(44, $request->getCdekCityId());
+
+        $this->assertSameXml($xml, $request);
+    }
+
+    public function testSuccessfulDeSerialization()
+    {
+        /** @var $response DeliveryCostResponse */
+        $response = $this->getSerializer()->deserialize(
+            FixturesLoader::load('DeliveryCost/SuccessResponse.xml'),
+            DeliveryCostResponse::class,
+            'xml'
+        );
+        $this->assertSame('DS', $response->getPartner());
+        $this->assertSame('Москва, Складочная 1 стр 18', $response->getTownTo());
+        $this->assertSame('MSK', $response->getZone());
+
+        $this->assertNotEmpty($response->getItems());
+        $this->assertCount(3, $response->getItems());
+        $this->assertCount(3, $response);
+        $this->assertContainsOnlyInstancesOf(Price::class, $response->getItems());
+
+        $price = $response->getItems()[0];
+
+        $this->assertSame(255, $price->getPrice());
+        $this->assertSame('0', $price->getZone());
+        $this->assertSame(1, $price->getService());
+        $this->assertSame('Доставка на следующий день после передачи заказа в курьерскую службу', $price->getMsg());
+        $this->assertSame('0-1', $price->getDeliveryPeriod());
+    }
+
+    public function testSuccessfulCdekDeSerialization()
+    {
+        /** @var $response DeliveryCostResponse */
+        $response = $this->getSerializer()->deserialize(
+            FixturesLoader::load('DeliveryCost/SuccessCdekResponse.xml'),
+            DeliveryCostResponse::class,
+            'xml'
+        );
+
+        $this->assertSame('SDEK', $response->getPartner());
+        $this->assertSame(748, $response->getPrice());
+        $this->assertSame('2-2', $response->getDeliveryPeriod());
+        $this->assertSame('+1 день обработка заказа для передачи партнеру', $response->getMsg());
+        $this->assertNull($response->getTownTo());
+        $this->assertNull($response->getZone());
+    }
+
+    public function testSuccessfulErrorDeSerialization()
+    {
+        /** @var $response DeliveryCostResponse */
+        $response = $this->getSerializer()->deserialize(
+            FixturesLoader::load('DeliveryCost/ErrorResponse.xml'),
+            DeliveryCostResponse::class,
+            'xml'
+        );
+
+        $this->assertNull($response->getPartner());
+        $this->assertNull($response->getPrice());
+        $this->assertNull($response->getDeliveryPeriod());
+        $this->assertNull($response->getMsg());
+        $this->assertNull($response->getTownTo());
+        $this->assertNull($response->getZone());
+        $this->assertSame(3, $response->getError());
+        $this->assertSame('Не найден город получатель', $response->getErrorMsg());
+    }
+}

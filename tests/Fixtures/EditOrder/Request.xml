@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<editbasket>
+    <order number="ABC-3">
+        <barcode>A1593159</barcode>
+        <receiver>
+            <town>Москва город</town>
+            <address>Тестовая улица</address>
+            <person>Частичка разрешена</person>
+            <phone>79999999999</phone>
+            <date>2019-08-10</date>
+            <time_min>12:00</time_min>
+            <time_max>22:00</time_max>
+        </receiver>
+        <service>1</service>
+        <weight>0.25</weight>
+        <quantity>1</quantity>
+        <paytype>CASH</paytype>
+        <price>1100.0</price>
+        <priced>100.0</priced>
+        <inshprice>2184.0</inshprice>
+        <upsnak>T</upsnak>
+        <instruction>Заявка с указанием населенного пункта в формате КЛАДР, с опцией "возврат накладных"</instruction>
+        <acceptpartially>NO</acceptpartially>
+        <deliveryset above_price="100.0" return_price="10.0">
+            <below below_sum="500.0" price="400.0" />
+            <below below_sum="2000.0" price="300.0" />
+        </deliveryset>
+        <items>
+            <item quantity="1" barcode="19634788" type="1">qwerty</item>
+            <item quantity="1" retprice="1000.0" barcode="19634791"  type="1">Карандаш</item>
+        </items>
+    </order>
+</editbasket>

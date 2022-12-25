@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<basketcreate>
+    <order number='sdk-002'>
+        <error error='time_max' errorCode='16' errorMessage='Некорректно указано максимальное время доставки' />
+        <error error='interval' errorCode='14' errorMessage='Некорректно указан временной интервал доставки' />
+        <error error='items' errorCode='22' errorMessage='Наименование товарной позиции является обязательным полем' />
+        <error error='items' errorCode='26' errorMessage='Наложенный платеж не совпадает со стоимостью товарных позиций + стоимость доставки Ожидалось 150' />
+    </order>
+</basketcreate>

@@ -1,0 +1,50 @@
+{
+  "name": "pankovalxndr/dalli-sdk-php",
+  "description": "This is a developer tool for integration with Dalli service.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "dalli",
+    "delivery",
+    "api",
+    "sdk"
+  ],
+  "homepage": "https://github.com/pankovalxndr/dalli-sdk-php",
+  "require": {
+    "php": ">=7.4.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "psr/http-client": "^1.0",
+    "jms/serializer": "^3.17",
+    "nyholm/psr7": "^1.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "squizlabs/php_codesniffer": "^3.7",
+    "vimeo/psalm": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "DalliSDK\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DalliSDK\\Test\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Pankov Aleksandr",
+      "email": "pankovalxndr@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "phpunit --colors=always",
+    "test-coverage": "XDEBUG_MODE=coverage phpunit --colors=always --coverage-html var/coverage",
+    "phpcs": "phpcs --standard=phpcs.xml",
+    "phpcbf": "phpcbf",
+    "psalm": "psalm --config=psalm.xml"
+  }
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stickers>
+    <order>
+        <barcode>A5971085</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=A5971085</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867559</id_im>
+        <date>2022-12-13</date>
+        <person>ФИО</person>
+        <address>Тверь, бульвар Цанова ул., 6 стр.</address>
+    </order>
+    <order>
+        <barcode>546A5972643</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=546A5972643</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867559_1</id_im>
+        <date></date>
+        <person>ФИО</person>
+        <address>Балашиха город, Ленина пр-кт, дом</address>
+    </order>
+    <order>
+        <barcode>546A5972662</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=546A5972662</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867559_2</id_im>
+        <date></date>
+        <person>ФИО</person>
+        <address>Балашиха город, Ленина пр-кт, дом</address>
+    </order>
+    <order>
+        <barcode>546A5972975</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=546A5972975</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867559_3</id_im>
+        <date></date>
+        <person>ФИО</person>
+        <address>Балашиха город, Ленина пр-кт, дом</address>
+    </order>
+    <order>
+        <barcode>546A5974056</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=546A5974056</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867559_1654</id_im>
+        <date></date>
+        <person>ФИО</person>
+        <address>Ленина, 5</address>
+    </order>
+    <order>
+        <barcode>546A5974190</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=546A5974190</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867559_1710</id_im>
+        <date></date>
+        <person>ФИО</person>
+        <address>Ленина ул, дом 45</address>
+    </order>
+    <order>
+        <barcode>546A5974519</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=546A5974519</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867459_1748</id_im>
+        <date></date>
+        <person>ФИО</person>
+        <address>Ленина, 10</address>
+    </order>
+    <order>
+        <barcode>546A5974647</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=546A5974647</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867459_1809</id_im>
+        <date></date>
+        <person>фио</person>
+        <address>ленина 125</address>
+    </order>
+    <order>
+        <barcode>546A5974658</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=546A5974658</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867459_1812</id_im>
+        <date></date>
+        <person>фио</person>
+        <address>ленина 125</address>
+    </order>
+    <order>
+        <barcode>546A5974669</barcode>
+        <image>https://api.dalli-service.com/v1/barcode/code.php?encoding=code128&amp;code=546A5974669</image>
+        <sender>ТЕСТ</sender>
+        <id_im>23867459_1814</id_im>
+        <date></date>
+        <person>фио</person>
+        <address>ленина 125</address>
+    </order>
+</stickers>

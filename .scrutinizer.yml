@@ -1,0 +1,19 @@
+filter:
+  excluded_paths: [ vendor/*, tests/* ]
+
+checks:
+  php: true
+
+before_commands:
+  - 'composer install --dev --prefer-source'
+
+build:
+  nodes:
+    coverage:
+      tests:
+        override:
+          - command: 'vendor/bin/phpunit --coverage-clover clover.xml; if [ "$?" -gt "2" ]; then exit 1; fi'
+            coverage:
+              file: clover.xml
+              format: php-clover
+            idle_timeout: 1800

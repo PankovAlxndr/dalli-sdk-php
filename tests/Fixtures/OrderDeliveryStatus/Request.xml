@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statusreq>
+    <orderno>20112-00094640</orderno>
+    <datefrom>2022-12-01</datefrom>
+    <dateto>2022-12-02</dateto>
+    <changes>ONLY_LAST</changes>
+    <datedelivery>YES</datedelivery>
+</statusreq>

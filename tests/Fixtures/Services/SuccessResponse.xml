@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services count="21">
+    <service>
+        <code>1</code>
+        <name>Обычная МСК и МО</name>
+    </service>
+    <service>
+        <code>2</code>
+        <name>Экспресс МСК</name>
+    </service>
+    <service>
+        <code>3</code>
+        <name>Срочная МСК</name>
+    </service>
+    <service>
+        <code>4</code>
+        <name>ПВЗ МСК</name>
+    </service>
+    <service>
+        <code>5</code>
+        <name>Забор из ИМ</name>
+    </service>
+    <service>
+        <code>7</code>
+        <name>Возврат товара</name>
+    </service>
+    <service>
+        <code>8</code>
+        <name>Возврат денег</name>
+    </service>
+    <service>
+        <code>9</code>
+        <name>ПВЗ СДЭК</name>
+    </service>
+    <service>
+        <code>10</code>
+        <name>Курьерская СДЭК</name>
+    </service>
+    <service>
+        <code>11</code>
+        <name>Обычная СПБ и ЛО</name>
+    </service>
+    <service>
+        <code>12</code>
+        <name>ПВЗ СПБ</name>
+    </service>
+    <service>
+        <code>13</code>
+        <name>ПВЗ BOXBERRY</name>
+    </service>
+    <service>
+        <code>14</code>
+        <name>Забор от Получателя</name>
+    </service>
+    <service>
+        <code>15</code>
+        <name>ПВЗ PICKPOINT</name>
+    </service>
+    <service>
+        <code>16</code>
+        <name>Экспресс забор</name>
+    </service>
+    <service>
+        <code>17</code>
+        <name>Первая миля</name>
+    </service>
+    <service>
+        <code>18</code>
+        <name>Первая миля +</name>
+    </service>
+    <service>
+        <code>19</code>
+        <name>Почта России</name>
+    </service>
+    <service>
+        <code>20</code>
+        <name>5POST</name>
+    </service>
+    <service>
+        <code>22</code>
+        <name>Курьерская ЦФО</name>
+    </service>
+    <service>
+        <code>23</code>
+        <name>ПВЗ ЦФО</name>
+    </service>
+</services>

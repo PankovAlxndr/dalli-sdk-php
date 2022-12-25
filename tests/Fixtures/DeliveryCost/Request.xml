@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deliverycost>
+    <partner>SDEK</partner>
+    <to>to</to>
+    <townto>Town to</townto>
+    <fias>0c5b2444-70a0-4932-980c-b4dc0d3f02b5</fias>
+    <kladr>kladr</kladr>
+    <pvzcode>pvz code</pvzcode>
+    <cdekcityid>44</cdekcityid>
+    <oblname>Ярославкая</oblname>
+    <weight>25</weight>
+    <price>500</price>
+    <inshprice>500</inshprice>
+    <cashservices>YES</cashservices>
+    <length>50</length>
+    <width>50</width>
+    <height>50</height>
+    <typedelivery>PVZ</typedelivery>
+    <withouttax>YES</withouttax>
+    <output>x2</output>
+</deliverycost>
