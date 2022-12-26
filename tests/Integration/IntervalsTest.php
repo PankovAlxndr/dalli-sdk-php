@@ -14,7 +14,7 @@ class IntervalsTest extends SerializerTestCase
     public function testSuccessfulSerialization()
     {
         $xml = FixturesLoader::load('Intervals/Request.xml');
-        $request = new IntervalsRequest(1, 11);
+        $request = new IntervalsRequest(1, 11, new \DateTime('2022-12-31 00:00:00'));
         $this->assertSame(IntervalsResponse::class, $request->getResponseClass());
 
         $this->assertSame(1, $request->getZone());

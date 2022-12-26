@@ -16,13 +16,38 @@ use JMS\Serializer\Annotation as JMS;
 class IntervalsRequest extends AbstractRequest implements RequestInterface
 {
     public const RESPONSE_CLASS = IntervalsResponse::class;
+
+    /**
+     * Зона, интервалы которой, вы хотите получить
+     *
+     * @JMS\Type("int")
+     * @JMS\SerializedName("zone")
+     */
     private ?int $zone;
+
+    /**
+     * Тип доставки, интервалы которого, вы хотите получить. (по умолчанию - внутригородская доставка)
+     *
+     * @JMS\Type("int")
+     * @JMS\SerializedName("service")
+     */
     private ?int $service;
 
-    public function __construct(?int $zone = null, ?int $service = null)
+    /**
+     * Дата доставки заказа в формате yyyy-mm-dd. Используется при смене интервалов,
+     * чтобы отображать актуальные интервалы для выбранной даты доставки.
+     * (по умолчанию - сегодня для экспресс, завтра для остальных)
+     *
+     * @JMS\Type("DateTime<'Y-m-d'>")
+     * @JMS\SerializedName("date")
+     */
+    private ?\DateTimeInterface $date;
+
+    public function __construct(?int $zone = null, ?int $service = null, ?\DateTimeInterface $date = null)
     {
         $this->service = $service;
         $this->zone = $zone;
+        $this->date = $date;
     }
 
     /**
@@ -39,5 +64,13 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
     public function getService(): ?int
     {
         return $this->service;
+    }
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
     }
 }
