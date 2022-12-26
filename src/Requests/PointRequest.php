@@ -16,10 +16,45 @@ use JMS\Serializer\Annotation as JMS;
 class PointRequest extends AbstractRequest implements RequestInterface
 {
     public const RESPONSE_CLASS = PointResponse::class;
+
+    /**
+     * Может принимать значения: DS, SDEK, BOXBERRY, 5POST
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("partner")
+     */
     private ?string $partner = null;
+
+    /**
+     * Код ФИАС. Указывается вместо города и области. Рекомендуем использовать именно его, а не текстовое название города
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("fias")
+     */
     private ?string $fias = null;
+
+    /**
+     * Область
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("settlement")
+     */
     private ?string $settlement = null;
+
+    /**
+     * Город (не рекомендуется)
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("town")
+     */
     private ?string $town = null;
+
+    /**
+     * Индекс
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("zipcode")
+     */
     private ?string $zipcode = null;
 
     /**

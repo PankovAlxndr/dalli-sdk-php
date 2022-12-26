@@ -22,6 +22,7 @@ class Point
      *
      * @JMS\XmlAttribute()
      * @JMS\Type("string")
+     * @JMS\SerializedName("code")
      */
     private string $code;
 
@@ -29,6 +30,7 @@ class Point
      * Наименование
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("name")
      */
     private string $name;
 
@@ -36,6 +38,7 @@ class Point
      * Регион
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("settlement")
      */
     private ?string $settlement = null;
 
@@ -43,6 +46,7 @@ class Point
      * Населенный пункт
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("town")
      */
     private ?string $town = null;
 
@@ -50,6 +54,7 @@ class Point
      * ФИАС код населённого пункта
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("fias")
      */
     private ?string $fias = null;
 
@@ -57,6 +62,7 @@ class Point
      * Адрес
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("address")
      */
     private string $address;
 
@@ -72,6 +78,7 @@ class Point
      * Описание ПВЗ/Как добраться
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("description")
      */
     private ?string $description = null;
 
@@ -79,9 +86,9 @@ class Point
      * Почтовый индекс
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("zipcode")
      */
     private ?string $zipcode = null;
-
 
     /**
      * Если 1, ПВЗ работает только с предоплаченными заказами
@@ -95,6 +102,7 @@ class Point
      * Если 1, принимает оплату картой
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("acquiring")
      */
     private ?string $acquiring = null;
 
@@ -126,6 +134,7 @@ class Point
      * Телефон для справок
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("phone")
      */
     private ?string $phone = null;
 
@@ -133,6 +142,7 @@ class Point
      * Может принимать значения: DS, SDEK, BOXBERRY, 5POST
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("partner")
      */
     private ?string $partner = null;
 
@@ -196,6 +206,7 @@ class Point
      * Тарифная зона
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("zone")
      */
     private ?string $zone = null;
 
@@ -203,6 +214,7 @@ class Point
      * Если 1, то это постамат
      *
      * @JMS\Type("string")
+     * @JMS\SerializedName("postamat")
      */
     private ?string $postamat = null;
 
