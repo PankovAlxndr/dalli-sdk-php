@@ -14,6 +14,7 @@ use DalliSDK\Requests\Stickers\StickersStreamRequest;
 use DalliSDK\Requests\Stickers\StickersXmlRequest;
 use DalliSDK\Responses\Act\ActBase64Response;
 use DalliSDK\Responses\Act\TransferMoney\ActTransferMoneyResponse;
+use DalliSDK\Responses\Act\TransferReturns\ActTransferReturnResponse;
 use DalliSDK\Responses\CreateBasketResponse;
 use DalliSDK\Responses\DeliveryCostResponse;
 use DalliSDK\Responses\EditBasketResponse;
@@ -60,6 +61,7 @@ use Psr\Http\Client\ClientExceptionInterface;
  * @method ActBase64Response                        sendActBase64Request(Requests\Act\ActBase64Request $request)
  *
  * @method ActTransferMoneyResponse                 sendActTransferMoneyRequest(Requests\Act\TransferMoney\ActTransferMoneyRequest $request)
+ * @method ActTransferReturnResponse                sendActTransferReturnRequest(Requests\Act\TransferReturn\ActTransferReturnRequest $request)
  */
 class Client
 {

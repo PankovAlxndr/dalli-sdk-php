@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<returnTransfers>
+    <from><![CDATA[2023-01-01]]></from>
+    <to><![CDATA[2023-01-02]]></to>
+    <output><![CDATA[XML]]></output>
+    <detail><![CDATA[YES]]></detail>
+    <aNumber><![CDATA[894821]]></aNumber>
+</returnTransfers>

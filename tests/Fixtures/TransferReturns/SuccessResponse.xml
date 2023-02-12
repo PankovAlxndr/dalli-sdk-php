@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<returnTransfers>
+    <act number="894821" date="2022-07-27">
+        <order acode="6144984" barcode="A5428842" number="62876792" delivereddate="2022-07-25" deliveredtime="11:55:00" deliveredto="по письму им" returnQty="1" ProductName="Документы: Заявление на перенос" governmentCode="1-8970109006864173283-3" ClientBarCode="212313231" />
+        <order acode="894821" barcode="A5428650" number="62876792" delivereddate="2022-07-25" deliveredtime="11:55:00" deliveredto="по письму им" returnQty="1" ProductName="Документы: Заявление на отказ" governmentCode="0089" ClientBarCode="313123" />
+    </act>
+</returnTransfers>

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DalliSDK\Test\Unit\Models;
 
 use DalliSDK\Models\OrderTransferMoney;
