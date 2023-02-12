@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moneyTransfers>
+    <act number="267870" date="2022-05-16" pay="2022-05-16" price="1981427" payNo="6129">
+        <order strbarcode="A5185814" number="61339918" delivereddate="2022-05-14" price="0" service="320" transfer="0" />
+    </act>
+</moneyTransfers>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moneyTransfers>
+    <from><![CDATA[2023-02-10]]></from>
+    <to><![CDATA[2023-02-12]]></to>
+    <output><![CDATA[XML]]></output>
+</moneyTransfers>
