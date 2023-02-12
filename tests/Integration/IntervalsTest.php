@@ -19,6 +19,10 @@ class IntervalsTest extends SerializerTestCase
 
         $this->assertSame(1, $request->getZone());
         $this->assertSame(11, $request->getService());
+        $this->assertSame(
+            \DateTime::createFromFormat('Y-m-d H:i:s', '2022-12-31 00:00:00')->getTimestamp(),
+            $request->getDate()->getTimestamp()
+        );
         $this->assertSameXml($xml, $request);
     }
 
