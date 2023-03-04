@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<basketcreate autosend="T">
+    <order number="sdk-002">
+        <receiver>
+            <town><![CDATA[г. Москва]]></town>
+            <address><![CDATA[ул. Мусы Джалиля, д.2 к1]]></address>
+            <person><![CDATA[Константин Константинопольский]]></person>
+            <phone><![CDATA[+7 000 000 00 00]]></phone>
+            <date><![CDATA[2022-12-23]]></date>
+            <time_min><![CDATA[18:00]]></time_min>
+            <time_max><![CDATA[22:00]]></time_max>
+        </receiver>
+        <service>1</service>
+        <weight>3.15</weight>
+        <quantity>1</quantity>
+        <paytype><![CDATA[CASH]]></paytype>
+        <price>150.0</price>
+        <priced>50.0</priced>
+        <inshprice>500.0</inshprice>
+        <instruction><![CDATA[Максимально аккуратно]]></instruction>
+        <items>
+            <item quantity="2" weight="3.15" retprice="50.0" inshprice="5.0" origincountry="RU" GTD="10702030" suppcompany="Компания поставщик" suppphone="+7 000 000 00 00" suppINN="3664069397" type="1"><![CDATA[Моя тестовая товарная позиция]]></item>
+        </items>
+    </order>
+</basketcreate>
