@@ -4,6 +4,7 @@
         <barcode>A1593159</barcode>
         <receiver>
             <town>Москва город</town>
+            <fias>f26b876b-6857-4951-b060-ec6559f04a9a</fias>
             <address>Тестовая улица</address>
             <person>Частичка разрешена</person>
             <phone>79999999999</phone>

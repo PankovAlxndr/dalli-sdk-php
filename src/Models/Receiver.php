@@ -43,8 +43,21 @@ class Receiver
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("town")
+     *
+     * @deprecated deprecated since version 1.4.0
      */
-    private string $town;
+    private ?string $town = null;
+
+    /**
+     * Точный ФИАС (до дома, квартиры или улицы).
+     * При использовании точного ФИАС, дополнительную информацию (подъезд, этаж, код домофона)
+     * можно написать в поле адреса ($this->address).
+     * Главное, не дублировать информацию, указанную в коде ФИАС (необязательный тег)
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("fias")
+     */
+    private ?string $fias = null;
 
     /**
      * Адрес (обязательный тег, если тип доставки относится к курьерской доставке)
@@ -52,7 +65,7 @@ class Receiver
      * @JMS\Type("string")
      * @JMS\SerializedName("address")
      */
-    private string $address;
+    private ?string $address = null;
 
     /**
      * Полный адрес одной строкой (Желательно, используется ВМЕСТО town+address)
@@ -127,17 +140,26 @@ class Receiver
     }
 
     /**
-     * @return string
+     * @return string|null
+     * @deprecated deprecated since version 1.4.0
      */
-    public function getTown(): string
+    public function getTown(): ?string
     {
         return $this->town;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAddress(): string
+    public function getFias(): ?string
+    {
+        return $this->fias;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAddress(): ?string
     {
         return $this->address;
     }
@@ -213,22 +235,34 @@ class Receiver
     }
 
     /**
-     * @param string $town
+     * @param string|null $town
      *
      * @return Receiver
+     * @deprecated deprecated since version 1.4.0
      */
-    public function setTown(string $town): Receiver
+    public function setTown(?string $town): Receiver
     {
         $this->town = $town;
         return $this;
     }
 
     /**
-     * @param string $address
+     * @param string|null $fias
      *
      * @return Receiver
      */
-    public function setAddress(string $address): Receiver
+    public function setFias(?string $fias): Receiver
+    {
+        $this->fias = $fias;
+        return $this;
+    }
+
+    /**
+     * @param string|null $address
+     *
+     * @return Receiver
+     */
+    public function setAddress(?string $address): Receiver
     {
         $this->address = $address;
         return $this;

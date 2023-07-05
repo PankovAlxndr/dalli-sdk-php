@@ -29,6 +29,7 @@ class CreateBasketTest extends SerializerTestCase
 
         $receiver->setAddress('ул. Мусы Джалиля, д.2 к1')
             ->setTown('г. Москва')
+            ->setFias('f26b876b-6857-4951-b060-ec6559f04a9a')
             ->setPerson('Константин Константинопольский')
             ->setPhone('+7 000 000 00 00')
             ->setDate(new DateTime('2022-12-23'))
@@ -87,6 +88,7 @@ class CreateBasketTest extends SerializerTestCase
 
         $receiver->setAddress('ул. Мусы Джалиля, д.2 к1')
             ->setTown('г. Москва')
+            ->setFias('f26b876b-6857-4951-b060-ec6559f04a9a')
             ->setPerson('Константин Константинопольский')
             ->setPhone('+7 000 000 00 00')
             ->setDate(new DateTime('2022-12-23'))

@@ -30,6 +30,7 @@ class RuPostTest extends SerializerTestCase
 
         $receiver->setAddress('Складочная 1 стр 18')
             ->setTown('Москва')
+            ->setFias('f26b876b-6857-4951-b060-ec6559f04a9a')
             ->setPerson('Иванов И. И.')
             ->setPhone('+797777777777')
             ->setZipCode('121552')

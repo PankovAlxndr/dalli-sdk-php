@@ -25,6 +25,7 @@ class ReceiverTest extends TestCase
             'date' => \DateTime::createFromFormat('Y-m-d H:i:s', '2023-01-01 00:00:00'),
             'timeMin' => '10:00',
             'timeMax' => '22:00',
+            'fias' => 'f26b876b-6857-4951-b060-ec6559f04a9a'
         ]);
     }
 
@@ -95,5 +96,16 @@ class ReceiverTest extends TestCase
     {
         $this->sut->setTo('Москва, Складочная 1 стр 18');
         $this->assertSame('Москва, Складочная 1 стр 18', $this->sut->getTo());
+    }
+
+    public function testGetFias()
+    {
+        $this->assertSame('f26b876b-6857-4951-b060-ec6559f04a9a', $this->sut->getFias());
+    }
+
+    public function testSetFias()
+    {
+        $this->sut->setFias('f26b876b-6857-4951-b060-2312412343');
+        $this->assertSame('f26b876b-6857-4951-b060-2312412343', $this->sut->getFias());
     }
 }

@@ -3,6 +3,7 @@
     <order number="sdk-002">
         <receiver>
             <town><![CDATA[г. Москва]]></town>
+            <fias><![CDATA[f26b876b-6857-4951-b060-ec6559f04a9a]]></fias>
             <address><![CDATA[ул. Мусы Джалиля, д.2 к1]]></address>
             <person><![CDATA[Константин Константинопольский]]></person>
             <phone><![CDATA[+7 000 000 00 00]]></phone>

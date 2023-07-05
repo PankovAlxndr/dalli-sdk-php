@@ -33,6 +33,7 @@ class EditBasketTest extends SerializerTestCase
 
         $receiver->setAddress('Тестовая улица')
             ->setTown('Москва город')
+            ->setFias('f26b876b-6857-4951-b060-ec6559f04a9a')
             ->setPerson('Частичка разрешена')
             ->setPhone('79999999999')
             ->setDate(new DateTime('2019-08-10'))
