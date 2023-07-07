@@ -67,8 +67,10 @@ class Order
      *
      * @JMS\Type("float")
      * @JMS\SerializedName("weight")
+     *
+     * @deprecated since version 1.5.0
      */
-    private ?float $weight;
+    private ?float $weight = null;
 
     /**
      * Количество мест, не путать с количеством товара (если пусто = 1)
@@ -277,6 +279,7 @@ class Order
 
     /**
      * @return float|null
+     * @deprecated deprecated since version 1.5.0
      */
     public function getWeight(): ?float
     {
@@ -285,7 +288,7 @@ class Order
 
     /**
      * @param float|null $weight
-     *
+     * @deprecated deprecated since version 1.5.0
      * @return Order
      */
     public function setWeight(?float $weight): Order
