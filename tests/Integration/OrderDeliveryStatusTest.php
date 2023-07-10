@@ -10,6 +10,7 @@ use DalliSDK\Models\Item;
 use DalliSDK\Models\OrderDelivery;
 use DalliSDK\Models\Package;
 use DalliSDK\Models\Receiver;
+use DalliSDK\Models\Sender;
 use DalliSDK\Models\Status;
 use DalliSDK\Models\StatusHistory;
 use DalliSDK\Requests\OrderDeliveryStatusCommitRequest;
@@ -70,6 +71,10 @@ class OrderDeliveryStatusTest extends SerializerTestCase
 
         $orderDelivery = $response->getItems()[0];
 
+        $this->assertSame(
+            \DateTime::createFromFormat('Y-m-d H:i:s', '2023-07-10 00:00:00')->getTimestamp(),
+            $orderDelivery->getCreateDate()->setTime(0, 0, 0)->getTimestamp()
+        );
         $this->assertSame('79807', $orderDelivery->getOrderNo());
         $this->assertSame('6846828', $orderDelivery->getOrderCode());
         $this->assertSame('A5913655', $orderDelivery->getGivenCode());
@@ -81,10 +86,10 @@ class OrderDeliveryStatusTest extends SerializerTestCase
         $this->assertSame(11, $orderDelivery->getService());
         $this->assertSame(0.0, $orderDelivery->getPrice());
         $this->assertSame(6785.0, $orderDelivery->getInshPrice());
+        $this->assertSame('NO', $orderDelivery->getAcceptpartially());
         $this->assertSame('SPI', $orderDelivery->getInstruction());
         $this->assertNull($orderDelivery->getEnclosure());
         $this->assertSame('(МО)', $response->getItems()[1]->getEnclosure());
-        //
         $this->assertSame('2024', $orderDelivery->getDepartment());
         $this->assertNull($response->getItems()[1]->getDepartment());
         $this->assertSame('9195_S1', $orderDelivery->getCostCode());
@@ -92,12 +97,18 @@ class OrderDeliveryStatusTest extends SerializerTestCase
         $this->assertNull($orderDelivery->getOutStrBarcode());
         $this->assertSame('12:50:00', $orderDelivery->getDeliveredTime());
         $this->assertNull($orderDelivery->getDeliveredTo());
-
-
         $this->assertSame(
             \DateTime::createFromFormat('Y-m-d H:i:s', '2022-12-05 00:00:00')->getTimestamp(),
             $orderDelivery->getDeliveredDate()->setTime(0, 0, 0)->getTimestamp()
         );
+
+        $sender = $orderDelivery->getSender();
+        $this->assertInstanceOf(Sender::class, $sender);
+        $this->assertSame('Кампания', $sender->getCompany());
+        $this->assertSame('Москва город', $sender->getTown());
+        $this->assertSame('Адрес', $sender->getAddress());
+        $this->assertSame('Персона', $sender->getPerson());
+        $this->assertSame('Телефон', $sender->getPhone());
 
         $acta = $orderDelivery->getActa();
         $this->assertNull($acta->getDate());

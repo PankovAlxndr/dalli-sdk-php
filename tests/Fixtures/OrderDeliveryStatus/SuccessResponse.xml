@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <statusreq count="2">
-    <order orderno="79807" ordercode="6846828" givencode="A5913655" awb="A5913655">
+    <order orderno="79807" ordercode="6846828" givencode="A5913655" awb="A5913655" createdate="2023-07-10">
         <barcode>A5913655</barcode>
+        <sender>
+            <company>Кампания</company>
+            <town>Москва город</town>
+            <address>Адрес</address>
+            <person>Персона</person>
+            <phone>Телефон</phone>
+            <date />
+            <time_min />
+            <time_max />
+        </sender>
         <receiver>
             <company>Евлампий Зигмундович</company>
             <person>Евлампий Зигмундович</person>
@@ -18,6 +28,7 @@
         <service>11</service>
         <price>0</price>
         <inshprice>6785</inshprice>
+        <acceptpartially>NO</acceptpartially>
         <instruction>SPI</instruction>
         <courier>
             <code>1136</code>
@@ -61,12 +72,22 @@
             <package strbarcode="SNQ15280018800002" mass="1.42" length="1" width="1" height="1" />
         </packages>
     </order>
-    <order orderno="79811" ordercode="6846818" givencode="A5913709" awb="A5913709">
+    <order orderno="79811" ordercode="6846818" givencode="A5913709" awb="A5913709" createdate="2023-07-10">
         <barcode>A5913709</barcode>
+        <sender>
+            <company>Кампания</company>
+            <town>Москва город</town>
+            <address>Адрес</address>
+            <person>Персона</person>
+            <phone>Телефон</phone>
+            <date />
+            <time_min />
+            <time_max />
+        </sender>
         <receiver>
             <company>ГОЛОВЧЕНКО ОКСАНА</company>
             <person>Головченко Оксана</person>
-            <phone>+79853190971</phone>
+            <phone>+71111111111</phone>
             <zipcode>115054</zipcode>
             <town>Москва город</town>
             <address>Валовая ул.,21 к125, кв.26</address>
@@ -81,6 +102,7 @@
         <price>0</price>
         <inshprice>6050</inshprice>
         <enclosure>(МО)</enclosure>
+        <acceptpartially>NO</acceptpartially>
         <courier>
             <code>2786</code>
             <phone>+7010101010101</phone>

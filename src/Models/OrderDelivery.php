@@ -54,6 +54,23 @@ class OrderDelivery
     private string $awb;
 
     /**
+     * Дата создания заказа
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("DateTimeImmutable<'Y-m-d'>")
+     * @JMS\SerializedName("createdate")
+     */
+    private ?\DateTimeImmutable $createDate = null;
+
+    /**
+     * Контейнер информации об отправителе
+     *
+     * @JMS\Type("DalliSDK\Models\Sender")
+     * @JMS\SerializedName("sender")
+     */
+    private Sender $sender;
+
+    /**
      * Штрих-код заказа
      *
      * @JMS\Type("string")
@@ -164,6 +181,18 @@ class OrderDelivery
      * @JMS\SerializedName("instruction")
      */
     private ?string $instruction = null;
+
+    /**
+     * Разрешение/запрет частичного выкупа.
+     * Принимает значения:
+     *  YES - когда частичный выкуп доступен,
+     *  NO - если не доступен.
+     * По-умолчанию берётся значение из карточки клиента
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("acceptpartially")
+     */
+    private ?string $acceptpartially = null;
 
     /**
      * Контейнер информации о курьере
@@ -284,11 +313,27 @@ class OrderDelivery
     }
 
     /**
+     * @return Sender
+     */
+    public function getSender(): Sender
+    {
+        return $this->sender;
+    }
+
+    /**
      * @return string
      */
     public function getBarcode(): string
     {
         return $this->barcode;
+    }
+
+    /**
+     * @return \DateTimeImmutable|null
+     */
+    public function getCreateDate(): ?\DateTimeImmutable
+    {
+        return $this->createDate;
     }
 
     /**
@@ -393,6 +438,14 @@ class OrderDelivery
     public function getInstruction(): ?string
     {
         return $this->instruction;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAcceptpartially(): ?string
+    {
+        return $this->acceptpartially;
     }
 
     /**
