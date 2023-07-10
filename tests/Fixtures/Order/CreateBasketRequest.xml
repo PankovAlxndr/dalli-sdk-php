@@ -11,6 +11,7 @@
             <time_min><![CDATA[18:00]]></time_min>
             <time_max><![CDATA[22:00]]></time_max>
         </receiver>
+        <sendercode>RU34234</sendercode>
         <service>1</service>
         <weight>3.15</weight>
         <quantity>1</quantity>

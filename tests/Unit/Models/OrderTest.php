@@ -67,6 +67,7 @@ class OrderTest extends TestCase
             'number' => 'sdk-006',
             'receiver' => $receiver,
             'department' => 'Код торговой точк',
+            'senderCode' =>'RU34234',
             'service' => 1,
             'weight' => 10.0,
             'quantity' => 1,
@@ -98,13 +99,11 @@ class OrderTest extends TestCase
         ]);
     }
 
-
     public function testSetPriced()
     {
         $this->sut->setPriced(11.0);
         $this->assertSame(11.0, $this->sut->getPriced());
     }
-
 
     public function testSetDeliverySet()
     {
@@ -131,7 +130,6 @@ class OrderTest extends TestCase
         $this->assertSame(22, $this->sut->getDeliverySet()->getVatRate());
         $this->assertContainsOnlyInstancesOf(Below::class, $this->sut->getDeliverySet()->getBelows());
     }
-
 
     public function testSetReceiver()
     {
@@ -229,7 +227,6 @@ class OrderTest extends TestCase
         $this->assertSame('Тестовый товар 3000', $item->getName());
     }
 
-
     public function testSetDepartment()
     {
         $this->sut->setDepartment('department');
@@ -254,13 +251,11 @@ class OrderTest extends TestCase
         $this->assertSame('987654321', $this->sut->getBarcode());
     }
 
-
     public function testSetUpsnak()
     {
         $this->sut->setUpsnak('T');
         $this->assertSame('T', $this->sut->getUpsnak());
     }
-
 
     public function testSetQuantity()
     {
@@ -292,10 +287,15 @@ class OrderTest extends TestCase
         $this->assertSame(33.5, $this->sut->getPrice());
     }
 
-
     public function testSetInshPrice()
     {
         $this->sut->setInshPrice(55.3);
         $this->assertSame(55.3, $this->sut->getInshPrice());
+    }
+
+    public function testSetSenderCode()
+    {
+        $this->sut->setSenderCode('AS332341');
+        $this->assertSame('AS332341', $this->sut->getSenderCode());
     }
 }

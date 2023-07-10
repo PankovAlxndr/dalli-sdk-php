@@ -59,8 +59,8 @@ class CreateBasketTest extends SerializerTestCase
             ->setPriced(50.0)
             ->setInshPrice(500.0)
             ->setInstruction('Максимально аккуратно')
-            ->setItems($items);
-
+            ->setItems($items)
+            ->setSenderCode('RU34234');
 
         $request = new CreateBasketRequest();
         $this->assertSame(CreateBasketResponse::class, $request->getResponseClass());

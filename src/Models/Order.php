@@ -54,6 +54,16 @@ class Order
     private ?string $department = null;
 
     /**
+     * Код адреса забора.
+     * Чтобы получить код адреса - обратитесь к вашему менеджеру.
+     * Требуется для расчёта стоимости внутригородской доставки по Екатеринбургу и Нижнему Новгороду
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("sendercode")
+     */
+    private ?string $senderCode = null;
+
+    /**
      * Тип доставки (код из соответствующего справочника). Обязательный тег
      *
      * @see https://api.dalli-service.com/v1/doc/request-types-of-delivery
@@ -255,6 +265,25 @@ class Order
     public function setDepartment(?string $department): Order
     {
         $this->department = $department;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getSenderCode(): ?string
+    {
+        return $this->senderCode;
+    }
+
+    /**
+     * @param string|null $senderCode
+     *
+     * @return Order
+     */
+    public function setSenderCode(?string $senderCode): Order
+    {
+        $this->senderCode = $senderCode;
         return $this;
     }
 
