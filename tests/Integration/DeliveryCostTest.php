@@ -35,7 +35,8 @@ class DeliveryCostTest extends SerializerTestCase
             ->setPvzCode('pvz code')
             ->setCdekCityId(44)
             ->setWithoutTax('YES')
-            ->setOutput('x2');
+            ->setOutput('x2')
+            ->setSenderCode('RU34234');
 
         $this->assertSame(Partner::SDEK, $request->getPartner());
         $this->assertSame('0c5b2444-70a0-4932-980c-b4dc0d3f02b5', $request->getFias());
@@ -56,6 +57,7 @@ class DeliveryCostTest extends SerializerTestCase
         $this->assertSame('Town to', $request->getTownTo());
         $this->assertSame('pvz code', $request->getPvzCode());
         $this->assertSame(44, $request->getCdekCityId());
+        $this->assertSame('RU34234', $request->getSenderCode());
 
         $this->assertSameXml($xml, $request);
     }

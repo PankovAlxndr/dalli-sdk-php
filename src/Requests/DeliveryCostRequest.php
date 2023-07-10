@@ -85,6 +85,16 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
     private ?int $weight = null;
 
     /**
+     * Код адреса забора.
+     * Чтобы получить код адреса - обратитесь к вашему менеджеру.
+     * Требуется для расчёта стоимости внутригородской доставки по Екатеринбургу и Нижнему Новгороду
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("sendercode")
+     */
+    private ?string $senderCode = null;
+
+    /**
      * Стоимость заказа
      *
      * @JMS\Type("int")
@@ -330,6 +340,25 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
     public function setWeight(?int $weight): DeliveryCostRequest
     {
         $this->weight = $weight;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getSenderCode(): ?string
+    {
+        return $this->senderCode;
+    }
+
+    /**
+     * @param string|null $senderCode
+     *
+     * @return DeliveryCostRequest
+     */
+    public function setSenderCode(?string $senderCode): DeliveryCostRequest
+    {
+        $this->senderCode = $senderCode;
         return $this;
     }
 
