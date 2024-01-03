@@ -50,6 +50,15 @@ class PointRequest extends AbstractRequest implements RequestInterface
     private ?string $town = null;
 
     /**
+     * Код ПВЗ
+     * Параметры поиска ПВЗ не являются обязательными. Если не указан ни один параметр, то вы получите список всех ПВЗ
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("pvzcode")
+     */
+    private ?string $pvzcode = null;
+
+    /**
      * Индекс
      *
      * @JMS\Type("string")
@@ -166,6 +175,25 @@ class PointRequest extends AbstractRequest implements RequestInterface
     public function setZipcode(?string $zipcode): PointRequest
     {
         $this->zipcode = $zipcode;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getPvzcode(): ?string
+    {
+        return $this->pvzcode;
+    }
+
+    /**
+     * @param string|null $pvzcode
+     *
+     * @return PointRequest
+     */
+    public function setPvzcode(?string $pvzcode): PointRequest
+    {
+        $this->pvzcode = $pvzcode;
         return $this;
     }
 }

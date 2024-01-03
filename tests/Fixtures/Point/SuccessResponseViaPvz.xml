@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pointsInfo>
+    <point code="99631">
+        <name>Москва Ремизова_9963_С</name>
+        <settlement>Москва</settlement>
+        <town>Москва</town>
+        <address>117186, Москва г, Ремизова ул, д.10</address>
+        <addressReduce>Ремизова ул, 10 д</addressReduce>
+        <zipcode>117186</zipcode>
+        <description>Метро Нагорная.</description>
+        <onlyPrepaid>0</onlyPrepaid>
+        <acquiring>1</acquiring>
+        <cash>1</cash>
+        <EnableFitting>0</EnableFitting>
+        <workShedule>пн: 10:00-20:00 вт: 10:00-20:00 ср: 10:00-20:00 чт: 10:00-20:00 пт: 10:00-20:00 сб: 10:00-17:00 вс: 10:00-17:00</workShedule>
+        <GPS>55.676220,37.600658</GPS>
+        <phone>+7(499)391-56-22</phone>
+        <partner>BOXBERRY</partner>
+        <service>13</service>
+        <weightLimit>31</weightLimit>
+        <Metro>Нагорная</Metro>
+        <Street>Ремизова</Street>
+        <House>10</House>
+        <Structure></Structure>
+        <Housing></Housing>
+        <Apartment></Apartment>
+        <fias>0c5b2444-70a0-4932-980c-b4dc0d3f02b5</fias>
+        <zone>1М</zone>
+        <postamat>0</postamat>
+        <ldtime>2024-01-03 05:43:34</ldtime>
+    </point>
+</pointsInfo>

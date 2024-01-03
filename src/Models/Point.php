@@ -107,6 +107,14 @@ class Point
     private ?string $acquiring = null;
 
     /**
+     * Если 1, принимает оплату наличными
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("cash")
+     */
+    private ?string $cash = null;
+
+    /**
      * Если 1, разрешена примерка
      *
      * @JMS\Type("string")
@@ -312,6 +320,14 @@ class Point
     public function getAcquiring(): ?string
     {
         return $this->acquiring;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCash(): ?string
+    {
+        return $this->cash;
     }
 
     /**

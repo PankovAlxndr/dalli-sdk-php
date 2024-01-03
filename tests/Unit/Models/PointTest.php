@@ -26,6 +26,7 @@ class PointTest extends TestCase
             'zipcode' => '127018',
             'onlyPrepaid' => '0',
             'acquiring' => '1',
+            'cash' => '1',
             'enableFitting' => '1',
             'workShedule' => 'пн-вск 10-22',
             'GPS' => '55.801905, 37.592114',
@@ -62,6 +63,11 @@ class PointTest extends TestCase
     public function testGetAcquiring()
     {
         $this->assertSame('1', $this->sut->getAcquiring());
+    }
+
+    public function testGetCash()
+    {
+        $this->assertSame('1', $this->sut->getCash());
     }
 
     public function testGetAddressReduce()

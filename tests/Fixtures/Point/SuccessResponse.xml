@@ -10,6 +10,7 @@
         <description>Метро Нагорная.</description>
         <onlyPrepaid>0</onlyPrepaid>
         <acquiring>1</acquiring>
+        <cash>1</cash>
         <EnableFitting>0</EnableFitting>
         <workShedule>пн: 10:00-20:00 вт: 10:00-20:00 ср: 10:00-20:00 чт: 10:00-20:00 пт: 10:00-20:00 сб: 10:00-17:00 вс: 10:00-17:00</workShedule>
         <GPS>55.676220,37.600658</GPS>
@@ -45,6 +46,7 @@
             КурьерСервисЭкспресс,.</description>
         <onlyPrepaid>0</onlyPrepaid>
         <acquiring>1</acquiring>
+        <cash>1</cash>
         <EnableFitting>0</EnableFitting>
         <workShedule>пн: 10:00-20:00 вт: 10:00-20:00 ср: 10:00-20:00 чт: 10:00-20:00 пт: 10:00-20:00 сб: 10:00-16:00 вс: 10:00-16:00</workShedule>
         <GPS>55.700695,37.922390</GPS>
