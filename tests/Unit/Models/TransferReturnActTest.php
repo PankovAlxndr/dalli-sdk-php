@@ -17,7 +17,8 @@ class TransferReturnActTest extends TestCase
         parent::setUp();
         $this->sut = TransferReturnAct::create([
             'number' => '267870',
-            'date' => \DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2023-01-01 00:00:00'),
+            'actDate' => \DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2023-01-01 00:00:00'),
+            'actMessage' => 'Место для вашей рекламы :)',
             'orders' => [
                 OrderTransferReturn::create([
                     'aCode' => 'A5185814',
@@ -43,7 +44,12 @@ class TransferReturnActTest extends TestCase
     public function testGetDate()
     {
         $dt = \DateTime::createFromFormat('Y-m-d H:i:s', '2023-01-01 00:00:00');
-        $this->assertEquals($dt, $this->sut->getDate());
+        $this->assertEquals($dt, $this->sut->geActDate());
+    }
+
+    public function testGetMessage()
+    {
+        $this->assertEquals('Место для вашей рекламы :)', $this->sut->getActMessage());
     }
 
     public function testGetOrders()

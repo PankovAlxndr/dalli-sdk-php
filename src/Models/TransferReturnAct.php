@@ -34,9 +34,18 @@ class TransferReturnAct implements \IteratorAggregate
      *
      * @JMS\XmlAttribute()
      * @JMS\Type("DateTimeImmutable<'Y-m-d'>")
-     * @JMS\SerializedName("date")
+     * @JMS\SerializedName("actDate")
      */
-    private \DateTimeImmutable $date;
+    private \DateTimeImmutable $actDate;
+
+    /**
+     * Комментарий к акту
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("string")
+     * @JMS\SerializedName("actMessage")
+     */
+    private ?string $actMessage = null;
 
     /**
      * @JMS\Type("array<DalliSDK\Models\OrderTransferReturn>")
@@ -70,10 +79,18 @@ class TransferReturnAct implements \IteratorAggregate
     }
 
     /**
+     * @return null|string
+     */
+    public function getActMessage(): ?string
+    {
+        return $this->actMessage;
+    }
+
+    /**
      * @return \DateTimeImmutable
      */
-    public function getDate(): \DateTimeImmutable
+    public function geActDate(): \DateTimeImmutable
     {
-        return $this->date;
+        return $this->actDate;
     }
 }

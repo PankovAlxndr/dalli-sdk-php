@@ -74,10 +74,10 @@ class ActTransferReturnTest extends SerializerTestCase
 
         $act = $response->getActs()[0];
         $this->assertSame('894821', $act->getNumber());
-
+        $this->assertSame('Место для вашей рекламы :)', $act->getActMessage());
         $this->assertSame(
             \DateTime::createFromFormat('Y-m-d H:i:s', '2022-07-27 00:00:00')->getTimestamp(),
-            $act->getDate()->setTime(0, 0)->getTimestamp()
+            $act->geActDate()->setTime(0, 0)->getTimestamp()
         );
 
         $orders = $act->getOrders();
