@@ -26,6 +26,21 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
     private ?int $zone;
 
     /**
+     * Название города, интервалы которого, вы хотите получить. Работает только для региональной доставки (service 22)
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("town")
+     */
+    private ?string $town;
+
+    /**
+     * ФИАС города, в котором доступен интервал. Работает только для региональной доставки (service 22)
+     *
+     * @JMS\Type("string")
+     */
+    private ?string $fias = null;
+
+    /**
      * Тип доставки, интервалы которого, вы хотите получить. (по умолчанию - внутригородская доставка)
      *
      * @JMS\Type("int")
@@ -43,10 +58,12 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
      */
     private ?\DateTimeInterface $date;
 
-    public function __construct(?int $zone = null, ?int $service = null, ?\DateTimeInterface $date = null)
+    public function __construct(?int $zone = null, ?int $service = null, ?string $town = null, ?string $fias = null, ?\DateTimeInterface $date = null)
     {
         $this->service = $service;
         $this->zone = $zone;
+        $this->town = $town;
+        $this->fias = $fias;
         $this->date = $date;
     }
 
@@ -56,6 +73,22 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
     public function getZone(): ?int
     {
         return $this->zone;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTown(): ?string
+    {
+        return $this->town;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFias(): ?string
+    {
+        return $this->fias;
     }
 
     /**

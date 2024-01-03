@@ -18,7 +18,9 @@ class IntervalTest extends TestCase
             'zone' => 1,
             'type' => 'basic',
             'timeMin' => '10',
-            'timeMax' => '17'
+            'timeMax' => '17',
+            'town' => 'белгород',
+            'fias' => '02e9c019-ab4d-4fa0-928e-d6c0a41dc256'
         ]);
     }
 
@@ -40,5 +42,15 @@ class IntervalTest extends TestCase
     public function testGetTimeMax()
     {
         $this->assertSame('17', $this->sut->getTimeMax());
+    }
+
+    public function testGetTown()
+    {
+        $this->assertSame('белгород', $this->sut->getTown());
+    }
+
+    public function testGetFias()
+    {
+        $this->assertSame('02e9c019-ab4d-4fa0-928e-d6c0a41dc256', $this->sut->getFias());
     }
 }

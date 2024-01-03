@@ -52,6 +52,22 @@ class Interval
     private int $zone;
 
     /**
+     * Атрибут указывающий название города, в котором доступен интервал. Работает только для региональной доставки
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("string")
+     */
+    private ?string $town = null;
+
+    /**
+     * Атрибут указывающий ФИАС города, в котором доступен интервал. Работает только для региональной доставки
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("string")
+     */
+    private ?string $fias = null;
+
+    /**
      * Атрибут указывающий тип доставки, в котором доступен интервал
      *
      * @JMS\XmlAttribute()
@@ -81,6 +97,22 @@ class Interval
     public function getZone(): int
     {
         return $this->zone;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getTown(): ?string
+    {
+        return $this->town;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getFias(): ?string
+    {
+        return $this->fias;
     }
 
     /**

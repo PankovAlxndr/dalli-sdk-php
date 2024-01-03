@@ -67,7 +67,7 @@ class OrderTest extends TestCase
             'number' => 'sdk-006',
             'receiver' => $receiver,
             'department' => 'Код торговой точк',
-            'senderCode' =>'RU34234',
+            'senderCode' => 'RU34234',
             'service' => 1,
             'weight' => 10.0,
             'quantity' => 1,

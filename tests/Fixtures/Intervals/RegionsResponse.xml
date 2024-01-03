@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<intervals count="44">
+    <interval type="basic" zone="0" service="22" town="воронеж" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="тамбов" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="орел" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="орел" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="курск" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="тула" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="тула" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="белгород" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="тверь" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="тверь" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="белгород" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="ярославль" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="ярославль" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="иваново" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="калуга" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="калуга" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="нижний новгород" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="липецк" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="липецк" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="нижний новгород" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="воронеж" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="владимир" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="смоленск" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="смоленск" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="владимир" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="екатеринбург" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="кострома" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="екатеринбург" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="рязань" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>14</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="рязань" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="брянск" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>9</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="ярославль" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="калуга" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="липецк" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="екатеринбург" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="воронеж" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="рязань" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="тверь" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="владимир" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="нижний новгород" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="орел" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="тула" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="смоленск" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+    <interval type="basic" zone="0" service="22" town="белгород" fias="5bf5ddff-6353-4a3d-80c4-6fb27f00c6c1">
+        <time_min>14</time_min>
+        <time_max>18</time_max>
+    </interval>
+</intervals>
