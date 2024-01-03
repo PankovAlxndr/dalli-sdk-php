@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DalliSDK\Test\Integration;
 
+use DalliSDK\Models\Item;
 use DalliSDK\Models\Order;
 use DalliSDK\Models\Responses\Error;
 use DalliSDK\Requests\GetBasketRequest;
@@ -48,6 +49,10 @@ class GetBasketTest extends SerializerTestCase
 
         $this->assertSame('sdk-004', $order->getNumber());
         $this->assertSame('A6000774', $order->getBarcode());
+
+        $item = $order->getItems()[0];
+        $this->assertInstanceOf(Item::class, $item);
+        $this->assertSame('{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}', $item->getExtraTags());
 
         $errors = $order->getErrors();
         $this->assertNotEmpty($response->getItems());

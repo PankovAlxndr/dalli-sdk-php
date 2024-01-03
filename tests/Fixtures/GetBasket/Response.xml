@@ -22,7 +22,7 @@
         <instruction>Максимально аккуратно</instruction>
         <acceptpartially>YES</acceptpartially>
         <items>
-            <item quantity='2' weight='3.15' retprice='50.00' inshprice='5.00' barcode='' article='' VATrate='0' origincountry='RU' GTD='10702030' suppcompany='Компания поставщик' suppINN='3664069397' governmentCode='' type='1'>Моя тестовая товарная позиция</item>
+            <item extraTags='{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}' quantity='2' weight='3.15' retprice='50.00' inshprice='5.00' barcode='' article='' VATrate='0' origincountry='RU' GTD='10702030' suppcompany='Компания поставщик' suppINN='3664069397' governmentCode='' type='1'>Моя тестовая товарная позиция</item>
         </items>
         <errors>
             <error error='items' errorCode='26' errorMessage='Наложенный платеж не совпадает со стоимостью товарных позиций + стоимость доставки' />
@@ -50,7 +50,7 @@
         <instruction>Максимально аккуратно</instruction>
         <acceptpartially>YES</acceptpartially>
         <items>
-            <item quantity='2' weight='3.15' retprice='50.00' inshprice='5.00' barcode='' article='' VATrate='0' origincountry='RU' GTD='10702030' suppcompany='Компания поставщик' suppINN='3664069397' governmentCode='' type='1'>Моя тестовая товарная позиция</item>
+            <item extraTags='{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}' quantity='2' weight='3.15' retprice='50.00' inshprice='5.00' barcode='' article='' VATrate='0' origincountry='RU' GTD='10702030' suppcompany='Компания поставщик' suppINN='3664069397' governmentCode='' type='1'>Моя тестовая товарная позиция</item>
         </items>
         <errors>
         </errors>
@@ -77,7 +77,7 @@
         <instruction>Максимально аккуратно</instruction>
         <acceptpartially>YES</acceptpartially>
         <items>
-            <item quantity='2' weight='3.15' retprice='50.00' inshprice='5.00' barcode='' article='' VATrate='0' origincountry='RU' GTD='10702030' suppcompany='Компания поставщик' suppINN='3664069397' governmentCode='' type='1'>Моя тестовая товарная позиция</item>
+            <item extraTags='{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}' quantity='2' weight='3.15' retprice='50.00' inshprice='5.00' barcode='' article='' VATrate='0' origincountry='RU' GTD='10702030' suppcompany='Компания поставщик' suppINN='3664069397' governmentCode='' type='1'>Моя тестовая товарная позиция</item>
         </items>
         <errors>
         </errors>

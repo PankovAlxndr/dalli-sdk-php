@@ -46,7 +46,8 @@ class CreateBasketTest extends SerializerTestCase
             ->setSuppCompany('Компания поставщик')
             ->setSuppPhone('+7 000 000 00 00')
             ->setSuppInn('3664069397')
-            ->setType(1);
+            ->setType(1)
+            ->setExtraTags('{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}');
         $items[] = $item;
 
         $order->setNumber('sdk-002')
@@ -105,7 +106,8 @@ class CreateBasketTest extends SerializerTestCase
             ->setSuppCompany('Компания поставщик')
             ->setSuppPhone('+7 000 000 00 00')
             ->setSuppInn('3664069397')
-            ->setType(1);
+            ->setType(1)
+            ->setExtraTags('{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}');
         $items[] = $item;
 
         $order->setNumber('sdk-002')

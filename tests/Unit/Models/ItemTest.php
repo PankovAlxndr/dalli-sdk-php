@@ -33,6 +33,7 @@ class ItemTest extends TestCase
             'governmentCode' => '8708 30',
             'type' => 1,
             'extCode' => '123213123',
+            'extraTags' => '{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}'
         ]);
     }
 
@@ -126,6 +127,11 @@ class ItemTest extends TestCase
         $this->assertSame('3664069397', $this->sut->getSuppINN());
     }
 
+    public function getExtraTags()
+    {
+        $this->assertSame('{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}', $this->sut->getExtraTags());
+    }
+
     public function testSetMass()
     {
         $this->sut->setMass(555.55);
@@ -160,5 +166,11 @@ class ItemTest extends TestCase
     {
         $this->sut->setExtCode('12345');
         $this->assertSame('12345', $this->sut->getExtCode());
+    }
+
+    public function setExtraTags()
+    {
+        $this->sut->setExtCode('{"tag1262":"0210","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=99"}');
+        $this->assertSame('{"tag1262":"0210","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=99"}', $this->sut->getExtraTags());
     }
 }

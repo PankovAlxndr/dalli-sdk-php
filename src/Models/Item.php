@@ -179,6 +179,15 @@ class Item
     private ?string $extCode = null;
 
     /**
+     * Строка в формате JSON для отправки в ОФД.
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("string")
+     * @JMS\SerializedName("extraTags")
+     */
+    private ?string $extraTags = null;
+
+    /**
      * Название товара
      *
      * @JMS\XmlValue
@@ -525,6 +534,25 @@ class Item
     public function setName(string $name): Item
     {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getExtraTags(): ?string
+    {
+        return $this->extraTags;
+    }
+
+    /**
+     * @param null|string $extraTags
+     *
+     * @return Item
+     */
+    public function setExtraTags(?string $extraTags): Item
+    {
+        $this->extraTags = $extraTags;
         return $this;
     }
 }
