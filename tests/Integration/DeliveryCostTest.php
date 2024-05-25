@@ -21,7 +21,7 @@ class DeliveryCostTest extends SerializerTestCase
         $request->setPartner(Partner::SDEK)
             ->setFias('0c5b2444-70a0-4932-980c-b4dc0d3f02b5')
             ->setOblName('Ярославкая')
-            ->setWeight(25)
+            ->setWeight(25.3)
             ->setPrice(500)
             ->setInshprice(500)
             ->setCashServices('YES')
@@ -41,7 +41,7 @@ class DeliveryCostTest extends SerializerTestCase
         $this->assertSame(Partner::SDEK, $request->getPartner());
         $this->assertSame('0c5b2444-70a0-4932-980c-b4dc0d3f02b5', $request->getFias());
         $this->assertSame('Ярославкая', $request->getOblName());
-        $this->assertSame(25, $request->getWeight());
+        $this->assertSame(25.3, $request->getWeight());
         $this->assertSame(500, $request->getPrice());
         $this->assertSame(500, $request->getInshprice());
         $this->assertSame('YES', $request->getCashServices());

@@ -80,9 +80,9 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
     /**
      * Вес заказа, кг
      *
-     * @JMS\Type("int")
+     * @JMS\Type("float")
      */
-    private ?int $weight = null;
+    private ?float $weight = null;
 
     /**
      * Код адреса забора.
@@ -325,19 +325,19 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
     }
 
     /**
-     * @return int|null
+     * @return float|null
      */
-    public function getWeight(): ?int
+    public function getWeight(): ?float
     {
         return $this->weight;
     }
 
     /**
-     * @param int|null $weight
+     * @param float|null $weight
      *
      * @return DeliveryCostRequest
      */
-    public function setWeight(?int $weight): DeliveryCostRequest
+    public function setWeight(?float $weight): DeliveryCostRequest
     {
         $this->weight = $weight;
         return $this;
