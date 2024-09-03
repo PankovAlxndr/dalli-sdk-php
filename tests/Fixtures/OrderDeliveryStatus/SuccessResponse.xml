@@ -41,18 +41,18 @@
             <advprice code="451" price="5">СМС-уведомление Получателя</advprice>
             <advprice code="2271" price="65.77">РКО для предоплаченных заказов</advprice>
         </deliveryprice>
-        <status eventtime="2022-12-05 12:50:00" createtimegmt="2022-12-06 05:45:37" title="Доставлен">COMPLETE</status>
+        <status store="1" eventtime="2022-12-05 12:50:00" createtimegmt="2022-12-06 05:45:37" title="Доставлен">COMPLETE</status>
         <statushistory>
-            <status eventstore="ДС-СПБ" eventtime="2022-12-05 12:50:00" createtimegmt="2022-12-06 05:45:37" title="Доставлен">COMPLETE</status>
-            <status eventstore="ДС-СПБ" eventtime="2022-12-05 12:50:00" createtimegmt="2022-12-05 09:50:38" title="Доставлен (предварительно)">COURIERDELIVERED</status>
-            <status eventstore="ДС-СПБ" eventtime="2022-12-05 08:36:49" createtimegmt="2022-12-05 05:36:49" title="Выдан курьеру на доставку">DELIVERY</status>
-            <status eventstore="ДС-СПБ" eventtime="2022-12-03 08:14:31" createtimegmt="2022-12-03 05:14:31" title="Получен складом">ACCEPTED</status>
-            <status eventstore="ДС-СПБ" eventtime="2022-12-02 19:50:05" createtimegmt="2022-12-02 16:50:05" title="Создан забор">NEWPICKUP</status>
-            <status eventstore="Офис в Москве" eventtime="2022-12-02 15:01:20" createtimegmt="2022-12-02 12:01:20" message="ДС-СПБ" title="Отправлено со склада">DEPARTURE</status>
-            <status eventstore="Офис в Москве" eventtime="2022-12-02 11:14:14" createtimegmt="2022-12-02 08:14:14" message="ДС-СПБ" title="Планируется отправка">DEPARTURING</status>
-            <status eventstore="Офис в Москве" eventtime="2022-12-01 22:12:59" createtimegmt="2022-12-01 19:12:59" title="Получен складом">ACCEPTED</status>
-            <status eventstore="Офис в Москве" eventtime="2022-12-01 16:17:43" createtimegmt="2022-12-01 13:17:43" title="Новый">NEW</status>
-            <status eventstore="ДС-СПБ" eventtime="2022-12-02 15:04:43" createtimegmt="" title="Забран у перевозчика">PICKUPTRANS</status>
+            <status store="2" eventstore="ДС-СПБ" eventtime="2022-12-05 12:50:00" createtimegmt="2022-12-06 05:45:37" title="Доставлен">COMPLETE</status>
+            <status store="2" eventstore="ДС-СПБ" eventtime="2022-12-05 12:50:00" createtimegmt="2022-12-05 09:50:38" title="Доставлен (предварительно)">COURIERDELIVERED</status>
+            <status store="2" eventstore="ДС-СПБ" eventtime="2022-12-05 08:36:49" createtimegmt="2022-12-05 05:36:49" title="Выдан курьеру на доставку">DELIVERY</status>
+            <status store="2" eventstore="ДС-СПБ" eventtime="2022-12-03 08:14:31" createtimegmt="2022-12-03 05:14:31" title="Получен складом">ACCEPTED</status>
+            <status store="2" eventstore="ДС-СПБ" eventtime="2022-12-02 19:50:05" createtimegmt="2022-12-02 16:50:05" title="Создан забор">NEWPICKUP</status>
+            <status store="2" eventstore="Офис в Москве" eventtime="2022-12-02 15:01:20" createtimegmt="2022-12-02 12:01:20" message="ДС-СПБ" title="Отправлено со склада">DEPARTURE</status>
+            <status store="2" eventstore="Офис в Москве" eventtime="2022-12-02 11:14:14" createtimegmt="2022-12-02 08:14:14" message="ДС-СПБ" title="Планируется отправка">DEPARTURING</status>
+            <status store="2" eventstore="Офис в Москве" eventtime="2022-12-01 22:12:59" createtimegmt="2022-12-01 19:12:59" title="Получен складом">ACCEPTED</status>
+            <status store="2" eventstore="Офис в Москве" eventtime="2022-12-01 16:17:43" createtimegmt="2022-12-01 13:17:43" title="Новый">NEW</status>
+            <status store="2" eventstore="ДС-СПБ" eventtime="2022-12-02 15:04:43" createtimegmt="" title="Забран у перевозчика">PICKUPTRANS</status>
         </statushistory>
         <department>2024</department>
         <delivereddate>2022-12-05</delivereddate>

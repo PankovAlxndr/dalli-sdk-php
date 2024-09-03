@@ -159,6 +159,7 @@ class OrderDeliveryStatusTest extends SerializerTestCase
         $this->assertSame('2022-12-05 12:50:00', $status->getEventtime());
         $this->assertSame('2022-12-06 05:45:37', $status->getCreatetimegmt());
         $this->assertSame('Доставлен', $status->getTitle());
+        $this->assertSame(1, $status->getStore());
         $this->assertNull($status->getEventstore());
 
         $statusHistory = $orderDelivery->getStatusHistory();

@@ -34,12 +34,20 @@ class Status
     private ?string $createtimegmt = null;
 
     /**
-     * Филиал, к которому относится текущий статус. Может принимать значения "Офис в Москве" и "Офис в Санкт-Петербурге"
+     * Филиал, к которому относится текущий статус
      *
      * @JMS\XmlAttribute()
      * @JMS\Type("string")
      */
     private ?string $eventstore = null;
+
+    /**
+     * Код филиала, в котором был проставлен статус
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("int")
+     */
+    private ?int $store = null;
 
     /**
      * Название статуса на русском языке
@@ -96,5 +104,13 @@ class Status
     public function getCode(): string
     {
         return $this->code;
+    }
+
+    /**
+     * @return null|int
+     */
+    public function getStore(): ?int
+    {
+        return $this->store;
     }
 }

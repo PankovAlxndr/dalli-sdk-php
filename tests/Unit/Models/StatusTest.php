@@ -48,4 +48,9 @@ class StatusTest extends TestCase
     {
         $this->assertNull($this->sut->getEventstore());
     }
+
+    public function testIsNullStore()
+    {
+        $this->assertNull($this->sut->getStore());
+    }
 }
