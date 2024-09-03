@@ -8,6 +8,7 @@ use DalliSDK\Models\Interval;
 use DalliSDK\Models\Order;
 use DalliSDK\Models\OrderResponse;
 use DalliSDK\Models\Point;
+use DalliSDK\Models\Responses\Response;
 use DalliSDK\Models\Service;
 use DalliSDK\Requests\Stickers\StickersBase64Request;
 use DalliSDK\Requests\Stickers\StickersStreamRequest;
@@ -15,6 +16,7 @@ use DalliSDK\Requests\Stickers\StickersXmlRequest;
 use DalliSDK\Responses\Act\ActBase64Response;
 use DalliSDK\Responses\Act\TransferMoney\ActTransferMoneyResponse;
 use DalliSDK\Responses\Act\TransferReturns\ActTransferReturnResponse;
+use DalliSDK\Responses\CancelOrderResponse;
 use DalliSDK\Responses\CreateBasketResponse;
 use DalliSDK\Responses\DeliveryCostResponse;
 use DalliSDK\Responses\EditBasketResponse;
@@ -48,6 +50,7 @@ use Psr\Http\Client\ClientExceptionInterface;
  * @method EditBasketResponse|OrderResponse         sendEditBasketRequest(Requests\EditBasketRequest $request)
  * @method RemoveBasketResponse                     sendRemoveBasketRequest(Requests\RemoveBasketRequest $request)
  * @method SendToDeliveryResponse|OrderResponse[]   sendToDeliveryRequest(Requests\SendToDeliveryBasketRequest $request)
+ * @method CancelOrderResponse|Response[]           sendCancelOrderRequest(Requests\CancelOrderRequest $request)
  *
  * @method SimpleResponse                           sendStickersStreamRequest(StickersStreamRequest $request)
  * @method StickersBase64Response                   sendStickersBase64Request(StickersBase64Request $request)

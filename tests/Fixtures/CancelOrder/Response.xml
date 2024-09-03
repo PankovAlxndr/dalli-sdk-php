@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cancelorder>
+    <response error="0" barcode="A5741951" message="Заявка отменена" />
+    <response error="1" barcode="A5741952" message="Заявка не найдена или её уже нельзя отменить" />
+</cancelorder>
