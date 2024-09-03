@@ -23,11 +23,36 @@ class ActTest extends SerializerTestCase
         $this->assertSame(['A59601981', 'A59601991'], $request->getBarcodes());
     }
 
+    public function testSuccessfulBase64SerializationViaArray()
+    {
+        $xml = FixturesLoader::load('Act/Request.xml');
+        $request = new ActBase64Request();
+        foreach (['A5960198', 'A5960199'] as $barcode) {
+            $request->addBarcode($barcode);
+        }
+        $this->assertSame(ActBase64Response::class, $request->getResponseClass());
+
+        $this->assertSameXml($xml, $request);
+
+        $request->setBarcodes(['A59601981', 'A59601991']);
+        $this->assertSame(['A59601981', 'A59601991'], $request->getBarcodes());
+    }
+
     public function testSuccessfulStreamSerialization()
     {
         $xml = FixturesLoader::load('Act/StreamRequest.xml');
         $request = new ActStreamRequest(['A5960198', 'A5960199']);
         $this->assertSameXml($xml, $request);
+    }
+
+    public function testExceptionSerializationViaArray()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $request = new ActBase64Request();
+        foreach (['A5741951', 'A5741951'] as $barcode) {
+            $request->addBarcode($barcode);
+        }
     }
 
     public function testSuccessfulBase64DeSerialization()

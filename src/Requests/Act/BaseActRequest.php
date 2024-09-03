@@ -51,4 +51,21 @@ class BaseActRequest extends AbstractRequest implements RequestInterface
         $this->barcodes = $barcodes;
         return $this;
     }
+
+    /**
+     * @param string $barcode
+     *
+     * @return $this
+     */
+    public function addBarcode(string $barcode): BaseActRequest
+    {
+        if ($this->barcodes === null) {
+            $this->barcodes = [];
+        }
+        if (in_array($barcode, $this->barcodes)) {
+            throw new \InvalidArgumentException("Barcode: $barcode already exists.");
+        }
+        $this->barcodes[] = $barcode;
+        return $this;
+    }
 }

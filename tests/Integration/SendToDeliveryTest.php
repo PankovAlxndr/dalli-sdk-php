@@ -25,6 +25,31 @@ class SendToDeliveryTest extends SerializerTestCase
         $this->assertSameXml($xml, $request);
     }
 
+    public function testSuccessfulSerializationViaArray()
+    {
+        $xml = FixturesLoader::load('SendToDelivery/Request.xml');
+
+        $request = new SendToDeliveryBasketRequest();
+        $this->assertSame(SendToDeliveryResponse::class, $request->getResponseClass());
+
+        foreach (['A1593868', 'B1593868', 'C1593868'] as $barcode) {
+            $request->addBarcode($barcode);
+        }
+        $this->assertSame($request->getBarcodes(), ['A1593868', 'B1593868', 'C1593868']);
+
+        $this->assertSameXml($xml, $request);
+    }
+
+    public function testExceptionSerializationViaArray()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $request = new SendToDeliveryBasketRequest();
+        foreach (['A5741951', 'A5741951'] as $barcode) {
+            $request->addBarcode($barcode);
+        }
+    }
+
     public function testErrorDeSerialization()
     {
         /** @var $response SendToDeliveryResponse */

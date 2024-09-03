@@ -43,4 +43,21 @@ class SendToDeliveryBasketRequest extends AbstractRequest implements RequestInte
         $this->barcodes = $barcodes;
         return $this;
     }
+
+    /**
+     * @param string $barcode
+     *
+     * @return $this
+     */
+    public function addBarcode(string $barcode): SendToDeliveryBasketRequest
+    {
+        if ($this->barcodes === null) {
+            $this->barcodes = [];
+        }
+        if (in_array($barcode, $this->barcodes)) {
+            throw new \InvalidArgumentException("Barcode: $barcode already exists.");
+        }
+        $this->barcodes[] = $barcode;
+        return $this;
+    }
 }

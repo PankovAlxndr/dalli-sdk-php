@@ -30,6 +30,34 @@ class StickersTest extends SerializerTestCase
         $this->assertSame(Format::A4, $request->getFormat());
     }
 
+    public function testSuccessfulBase64SerializationViaArray()
+    {
+        $xml = FixturesLoader::load('Stickers/Request.xml');
+        $request = new StickersBase64Request(3);
+        foreach (['A5960198', 'A5960199'] as $barcode) {
+            $request->addBarcode($barcode);
+        };
+        $this->assertSame(StickersBase64Response::class, $request->getResponseClass());
+
+        $this->assertSame(['A5960198', 'A5960199'], $request->getBarcodes());
+        $this->assertSameXml($xml, $request);
+
+        $request->setBarcodes(['A59601981', 'A59601991']);
+        $this->assertSame(['A59601981', 'A59601991'], $request->getBarcodes());
+        $request->setFormat(Format::A4);
+        $this->assertSame(Format::A4, $request->getFormat());
+    }
+
+    public function testExceptionSerializationViaArray()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $request = new StickersBase64Request(3);
+        foreach (['A5741951', 'A5741951'] as $barcode) {
+            $request->addBarcode($barcode);
+        }
+    }
+
     public function testSuccessfulStreamSerialization()
     {
         $xml = FixturesLoader::load('Stickers/StreamRequest.xml');

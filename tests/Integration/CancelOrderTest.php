@@ -25,6 +25,30 @@ class CancelOrderTest extends SerializerTestCase
         $this->assertSameXml($xml, $request);
     }
 
+    public function testSuccessfulSerializationViaArray()
+    {
+        $xml = FixturesLoader::load('CancelOrder/Request.xml');
+
+        $request = new CancelOrderRequest();
+        $this->assertSame(CancelOrderResponse::class, $request->getResponseClass());
+        foreach (['A5741951', 'A5741952'] as $barcode) {
+            $request->addBarcode($barcode);
+        }
+        $this->assertSame($request->getBarcodes(), ['A5741951', 'A5741952']);
+
+        $this->assertSameXml($xml, $request);
+    }
+
+    public function testExceptioSerializationViaArray()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $request = new CancelOrderRequest();
+        foreach (['A5741951', 'A5741951'] as $barcode) {
+            $request->addBarcode($barcode);
+        }
+    }
+
     public function testErrorDeSerialization()
     {
         /** @var $response SendToDeliveryResponse */
@@ -48,6 +72,5 @@ class CancelOrderTest extends SerializerTestCase
         $this->assertSame('A5741952', $itemError->getBarcode());
         $this->assertSame('Заявка не найдена или её уже нельзя отменить', $itemError->getMessage());
         $this->assertTrue($itemError->getError());
-
     }
 }
