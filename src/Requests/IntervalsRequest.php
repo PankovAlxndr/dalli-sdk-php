@@ -49,6 +49,14 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
     private ?int $service;
 
     /**
+     * Код филиала Dalli. Можно использовать вместо города и ФИАС
+     *
+     * @JMS\Type("int")
+     * @JMS\SerializedName("filial")
+     */
+    private ?int $filial = null;
+
+    /**
      * Дата доставки заказа в формате yyyy-mm-dd. Используется при смене интервалов,
      * чтобы отображать актуальные интервалы для выбранной даты доставки.
      * (по умолчанию - сегодня для экспресс, завтра для остальных)
@@ -58,13 +66,20 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
      */
     private ?\DateTimeInterface $date;
 
-    public function __construct(?int $zone = null, ?int $service = null, ?string $town = null, ?string $fias = null, ?\DateTimeInterface $date = null)
-    {
+    public function __construct(
+        ?int $zone = null,
+        ?int $service = null,
+        ?string $town = null,
+        ?string $fias = null,
+        ?\DateTimeInterface $date = null,
+        ?int $filial = null
+    ) {
         $this->service = $service;
         $this->zone = $zone;
         $this->town = $town;
         $this->fias = $fias;
         $this->date = $date;
+        $this->filial = $filial;
     }
 
     /**
@@ -105,5 +120,10 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
     public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
+    }
+
+    public function getFilial(): ?int
+    {
+        return $this->filial;
     }
 }

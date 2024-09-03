@@ -21,6 +21,25 @@ class IntervalsTest extends SerializerTestCase
         $this->assertSame(11, $request->getService());
         $this->assertNull($request->getTown());
         $this->assertNull($request->getFias());
+        $this->assertNull($request->getFilial());
+        $this->assertSame(
+            \DateTime::createFromFormat('Y-m-d H:i:s', '2022-12-31 00:00:00')->getTimestamp(),
+            $request->getDate()->getTimestamp()
+        );
+        $this->assertSameXml($xml, $request);
+    }
+
+    public function testSuccessfulFilialSerialization()
+    {
+        $xml = FixturesLoader::load('Intervals/RequestFilial.xml');
+        $request = new IntervalsRequest(1, 11, null, null, new \DateTime('2022-12-31 00:00:00'), 1);
+        $this->assertSame(IntervalsResponse::class, $request->getResponseClass());
+
+        $this->assertSame(1, $request->getZone());
+        $this->assertSame(11, $request->getService());
+        $this->assertSame(1, $request->getFilial());
+        $this->assertNull($request->getTown());
+        $this->assertNull($request->getFias());
         $this->assertSame(
             \DateTime::createFromFormat('Y-m-d H:i:s', '2022-12-31 00:00:00')->getTimestamp(),
             $request->getDate()->getTimestamp()
