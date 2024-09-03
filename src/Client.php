@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DalliSDK;
 
+use DalliSDK\Models\Filial;
 use DalliSDK\Models\Interval;
 use DalliSDK\Models\Order;
 use DalliSDK\Models\OrderResponse;
@@ -20,6 +21,7 @@ use DalliSDK\Responses\CancelOrderResponse;
 use DalliSDK\Responses\CreateBasketResponse;
 use DalliSDK\Responses\DeliveryCostResponse;
 use DalliSDK\Responses\EditBasketResponse;
+use DalliSDK\Responses\FilialsResponse;
 use DalliSDK\Responses\GetBasketResponse;
 use DalliSDK\Responses\IntervalsResponse;
 use DalliSDK\Responses\OrderDeliveryStatusResponse;
@@ -51,6 +53,8 @@ use Psr\Http\Client\ClientExceptionInterface;
  * @method RemoveBasketResponse                     sendRemoveBasketRequest(Requests\RemoveBasketRequest $request)
  * @method SendToDeliveryResponse|OrderResponse[]   sendToDeliveryRequest(Requests\SendToDeliveryBasketRequest $request)
  * @method CancelOrderResponse|Response[]           sendCancelOrderRequest(Requests\CancelOrderRequest $request)
+ *
+ * @method FilialsResponse|Filial[]                 sendFilialsRequest(Requests\FilialsRequest $request)
  *
  * @method SimpleResponse                           sendStickersStreamRequest(StickersStreamRequest $request)
  * @method StickersBase64Response                   sendStickersBase64Request(StickersBase64Request $request)

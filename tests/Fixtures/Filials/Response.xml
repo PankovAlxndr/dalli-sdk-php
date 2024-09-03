@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filials count="2">
+    <filials>
+        <code>1</code>
+        <name>Офис Москва (GMT+3)</name>
+    </filials>
+    <filials>
+        <code>7157</code>
+        <name>Офис Санкт-Петербург (GMT+3)</name>
+    </filials>
+</filials>

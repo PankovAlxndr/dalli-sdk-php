@@ -21,17 +21,17 @@ class CourierTest extends TestCase
         ]);
     }
 
-    public function testGetName()
+    public function testGetCode()
     {
         $this->assertSame('1', $this->sut->getCode());
     }
 
-    public function testGetCode()
+    public function testGetPhone()
     {
         $this->assertSame('+70000000000', $this->sut->getPhone());
     }
 
-    public function testGetPhone()
+    public function testGetName()
     {
         $this->assertSame('Константин Константинопольский', $this->sut->getName());
     }
