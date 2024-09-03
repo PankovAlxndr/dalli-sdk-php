@@ -8,6 +8,8 @@ use DalliSDK\Client;
 use DalliSDK\Models\Order;
 use DalliSDK\Requests\Act\ActStreamRequest;
 use DalliSDK\Requests\GetBasketRequest;
+use DalliSDK\Requests\PolygonsRequest;
+use DalliSDK\Responses\RawDataResponse;
 use DalliSDK\Test\Fixtures\FixturesLoader;
 use PHPUnit\Framework\TestCase;
 
@@ -46,6 +48,22 @@ class ClientTest extends TestCase
         $response = $dalliClient->sendActStreamRequest(new ActStreamRequest());
 
         $this->assertSame('%PDF-1.7 3 0 obj ....', $response->getHttpBody());
+    }
+
+
+    public function testRawRequest()
+    {
+        $clientMock = $this->getHttpClient('text/xml', FixturesLoader::load('Polygons/Response.json'));
+
+        $dalliClient = new Client($clientMock, 'my_token', 'url');
+
+        $response = $dalliClient->sendPolygonsRequest(new PolygonsRequest(22, 0, 91128));
+        $this->assertInstanceOf(RawDataResponse::class, $response);
+
+        $this->assertIsArray($response->getRawData());
+
+        $response->setRawData('test');
+        $this->assertSame('test', $response->getRawData());
     }
 
     private function getHttpClient(string $contentType, string $responseBody, int $statusCode = 200, array $extraHeaders = [])

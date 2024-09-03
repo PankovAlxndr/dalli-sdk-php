@@ -11,6 +11,7 @@ use DalliSDK\Models\OrderResponse;
 use DalliSDK\Models\Point;
 use DalliSDK\Models\Responses\Response;
 use DalliSDK\Models\Service;
+use DalliSDK\Requests\MustRawJson;
 use DalliSDK\Requests\Stickers\StickersBase64Request;
 use DalliSDK\Requests\Stickers\StickersStreamRequest;
 use DalliSDK\Requests\Stickers\StickersXmlRequest;
@@ -26,6 +27,8 @@ use DalliSDK\Responses\GetBasketResponse;
 use DalliSDK\Responses\IntervalsResponse;
 use DalliSDK\Responses\OrderDeliveryStatusResponse;
 use DalliSDK\Responses\PointResponse;
+use DalliSDK\Responses\PolygonsResponse;
+use DalliSDK\Responses\RawDataResponse;
 use DalliSDK\Responses\RemoveBasketResponse;
 use DalliSDK\Responses\RuPostResponse;
 use DalliSDK\Responses\SendToDeliveryResponse;
@@ -55,6 +58,7 @@ use Psr\Http\Client\ClientExceptionInterface;
  * @method CancelOrderResponse|Response[]           sendCancelOrderRequest(Requests\CancelOrderRequest $request)
  *
  * @method FilialsResponse|Filial[]                 sendFilialsRequest(Requests\FilialsRequest $request)
+ * @method RawDataResponse                          sendPolygonsRequest(Requests\PolygonsRequest $request)
  *
  * @method SimpleResponse                           sendStickersStreamRequest(StickersStreamRequest $request)
  * @method StickersBase64Response                   sendStickersBase64Request(StickersBase64Request $request)
@@ -111,6 +115,9 @@ class Client
             \strpos(implode(',', $response->getHeader('Content-Type')), 'text/xml') !== false
         ) {
             $body = $response->getBody()->getContents();
+            if ($request instanceof MustRawJson) {
+                return new RawDataResponse(json_decode($body, true));
+            }
             $body = $this->fixNullAttributes($body);
             $body = $this->fixAmpersand($body);
             return $this->serializer->deserialize($body, $request->getResponseClass(), 'xml');
