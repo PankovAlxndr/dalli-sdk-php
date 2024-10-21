@@ -67,6 +67,22 @@ class PointRequest extends AbstractRequest implements RequestInterface
     private ?string $zipcode = null;
 
     /**
+     * Если 1 - принимает оплату картой, 0 - не принимает оплату картой, null - сброс фильтра
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("acquiring")
+     */
+    private ?string $acquiring = null;
+
+    /**
+     * Если 1 -принимает оплату наличными, 0 - не принимает оплату наличными, null - сброс фильтра
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("cash")
+     */
+    private ?string $cash = null;
+
+    /**
      * @param string|null $town
      * @param string|null $partner
      * @param string|null $settlement
@@ -194,6 +210,44 @@ class PointRequest extends AbstractRequest implements RequestInterface
     public function setPvzcode(?string $pvzcode): PointRequest
     {
         $this->pvzcode = $pvzcode;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAcquiring(): ?string
+    {
+        return $this->acquiring;
+    }
+
+    /**
+     * @param string|null $acquiring
+     *
+     * @return $this
+     */
+    public function setAcquiring(?string $acquiring): PointRequest
+    {
+        $this->acquiring = $acquiring;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCash(): ?string
+    {
+        return $this->cash;
+    }
+
+    /**
+     * @param string|null $cash
+     *
+     * @return $this
+     */
+    public function setCash(?string $cash): PointRequest
+    {
+        $this->cash = $cash;
         return $this;
     }
 }

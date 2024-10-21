@@ -52,6 +52,31 @@ class PointTest extends SerializerTestCase
         $this->assertSameXml($xml, $request);
     }
 
+    public function testSuccessfulSerializationWithPayFlag()
+    {
+        $xml = FixturesLoader::load('Point/RequestWithPayFlag.xml');
+        $request = new PointRequest();
+        $this->assertSame(PointResponse::class, $request->getResponseClass());
+
+        $request->setSettlement('Москва')
+            ->setTown('Москва')
+            ->setFias('0c5b2444-70a0-4932-980c-b4dc0d3f02b5')
+            ->setZipcode('150000')
+            ->setPartner(Partner::BOXBERRY)
+            ->setAcquiring('1')
+            ->setCash('1');
+
+        $this->assertSame('Москва', $request->getTown());
+        $this->assertSame('Москва', $request->getSettlement());
+        $this->assertSame('0c5b2444-70a0-4932-980c-b4dc0d3f02b5', $request->getFias());
+        $this->assertSame('150000', $request->getZipcode());
+        $this->assertSame('1', $request->getAcquiring());
+        $this->assertSame('1', $request->getCash());
+        $this->assertSame(Partner::BOXBERRY, $request->getPartner());
+
+        $this->assertSameXml($xml, $request);
+    }
+
     public function testSuccessfulDeSerialization()
     {
         /** @var $response PointResponse */
