@@ -18,6 +18,14 @@ class Price
     use Fillable;
 
     /**
+     * Тип тарифа (для Почты России)
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("int")
+     */
+    private ?int $type = null;
+
+    /**
      * Режим доставки (тип услуги) передается код из соответствующего справочника
      *
      * @JMS\XmlAttribute()
@@ -58,6 +66,13 @@ class Price
      */
     private ?string $zone = null;
 
+    /**
+     * @return int|null
+     */
+    public function getType(): ?int
+    {
+        return $this->type;
+    }
 
     /**
      * @return int|null

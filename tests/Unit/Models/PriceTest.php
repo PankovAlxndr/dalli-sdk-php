@@ -19,7 +19,13 @@ class PriceTest extends TestCase
             'zone' => '2',
             'service' => 1,
             'msg' => 'Сообщение',
+            'type' => 2,
         ]);
+    }
+
+    public function testGetType()
+    {
+        $this->assertSame(2, $this->sut->getType());
     }
 
     public function testGetDeliveryPeriod()
@@ -55,5 +61,6 @@ class PriceTest extends TestCase
         $this->assertNull($price->getZone());
         $this->assertNull($price->getPrice());
         $this->assertNull($price->getDeliveryPeriod());
+        $this->assertNull($price->getType());
     }
 }
