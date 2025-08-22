@@ -109,6 +109,7 @@ class PointTest extends SerializerTestCase
         $this->assertSame('55.676220,37.600658', $point->getGPS());
         $this->assertSame('+7(499)391-56-22', $point->getPhone());
         $this->assertSame('BOXBERRY', $point->getPartner());
+        $this->assertSame(13, $point->getService());
         $this->assertSame(15.0, $point->getWeightLimit());
         $this->assertSame('Нагорная', $point->getMetro());
         $this->assertSame('Ремизова', $point->getStreet());
@@ -153,6 +154,7 @@ class PointTest extends SerializerTestCase
         $this->assertSame('55.676220,37.600658', $point->getGPS());
         $this->assertSame('+7(499)391-56-22', $point->getPhone());
         $this->assertSame('BOXBERRY', $point->getPartner());
+        $this->assertSame(13, $point->getService());
         $this->assertSame(31.0, $point->getWeightLimit());
         $this->assertSame('Нагорная', $point->getMetro());
         $this->assertSame('Ремизова', $point->getStreet());
