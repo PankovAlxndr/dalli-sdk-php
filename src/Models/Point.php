@@ -155,6 +155,15 @@ class Point
     private ?string $partner = null;
 
     /**
+     * Содержит код типа доставки
+     * @see https://api.dalli-service.com/doc/v1/services
+     *
+     * @JMS\Type("int")
+     * @JMS\SerializedName("service")
+     */
+    private ?int $service = null;
+
+    /**
      * Ограничение по весу в кг
      *
      * @JMS\Type("float")
@@ -368,6 +377,14 @@ class Point
     public function getPartner(): ?string
     {
         return $this->partner;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getService(): ?int
+    {
+        return $this->service;
     }
 
     /**
