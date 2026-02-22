@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dates count="2">
+    <date value="2025-10-13">
+        <intervals count="2">
+            <interval type="basic" zone="0" service="1">
+                <time_min>9</time_min>
+                <time_max>22</time_max>
+            </interval>
+            <interval type="client" zone="0" service="1">
+                <time_min>14</time_min>
+                <time_max>23</time_max>
+            </interval>
+        </intervals>
+    </date>
+    <date value="2025-10-14">
+        <intervals count="2">
+            <interval type="basic" zone="0" service="1">
+                <time_min>9</time_min>
+                <time_max>22</time_max>
+            </interval>
+            <interval type="client" zone="0" service="1">
+                <time_min>14</time_min>
+                <time_max>23</time_max>
+            </interval>
+        </intervals>
+    </date>
+</dates>

@@ -18,6 +18,14 @@ use JMS\Serializer\Annotation as JMS;
 class IntervalsResponse implements ResponseInterface, \IteratorAggregate
 {
     /**
+     * Количество интервалов (атрибут count у <intervals>)
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("int")
+     */
+    private ?int $count = null;
+
+    /**
      * @JMS\Type("array<DalliSDK\Models\Interval>")
      * @JMS\XmlList(inline = true, entry = "interval")
      * @var Interval[]
@@ -52,5 +60,13 @@ class IntervalsResponse implements ResponseInterface, \IteratorAggregate
         return array_filter($this->getItems(), function ($item) {
             return $item->getType() == 'client';
         });
+    }
+
+    /**
+     * @return ?int
+     */
+    public function getCount(): ?int
+    {
+        return $this->count;
     }
 }

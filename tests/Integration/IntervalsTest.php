@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace DalliSDK\Test\Integration;
 
+use DalliSDK\Models\DateIntervals;
 use DalliSDK\Models\Interval;
 use DalliSDK\Requests\IntervalsRequest;
+use DalliSDK\Responses\IntervalsDatesResponse;
 use DalliSDK\Responses\IntervalsResponse;
 use DalliSDK\Test\Fixtures\FixturesLoader;
 
@@ -30,6 +32,30 @@ class IntervalsTest extends SerializerTestCase
             $request->getDate()->getTimestamp()
         );
         $this->assertSameXml($xml, $request);
+
+
+        $request->setAddress('foo');
+        $request->setZone(12);
+        $request->setStrict('F');
+        $request->setOutput(IntervalsRequest::OUTPUT_DATES);
+        $request->setTown('СПБ');
+        $request->setFias('123');
+        $request->setService(111);
+        $request->setFilial(222);
+        $request->setDate(\DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2026-02-22 00:00:00'));
+
+        $this->assertSame('foo', $request->getAddress());
+        $this->assertSame(12, $request->getZone());
+        $this->assertSame('F', $request->getStrict());
+        $this->assertSame(IntervalsRequest::OUTPUT_DATES, $request->getOutput());
+        $this->assertSame('СПБ', $request->getTown());
+        $this->assertSame('123', $request->getFias());
+        $this->assertSame(111, $request->getService());
+        $this->assertSame(222, $request->getFilial());
+        $this->assertEquals(
+            '2026-02-22',
+            $request->getDate()->format('Y-m-d')
+        );
     }
 
     public function testSuccessfulAddressSerialization()
@@ -46,7 +72,7 @@ class IntervalsTest extends SerializerTestCase
             'dates',
             'T'
         );
-        $this->assertSame(IntervalsResponse::class, $request->getResponseClass());
+        $this->assertSame(IntervalsDatesResponse::class, $request->getResponseClass());
 
         $this->assertNull($request->getZone());
         $this->assertNull($request->getService());
@@ -101,6 +127,7 @@ class IntervalsTest extends SerializerTestCase
         );
 
         $this->assertNotEmpty($response->getItems());
+        $this->assertSame(7, $response->getCount());
         $this->assertCount(7, $response->getItems());
         $this->assertCount(7, $response);
         $this->assertContainsOnlyInstancesOf(Interval::class, $response->getItems());
@@ -111,6 +138,40 @@ class IntervalsTest extends SerializerTestCase
         $this->assertSame('basic', $interval->getType());
         $this->assertSame(1, $interval->getZone());
         $this->assertSame(1, $interval->getService());
+    }
+
+    public function testSuccessfulDatesDeSerialization()
+    {
+        /** @var $response IntervalsDatesResponse */
+        $response = $this->getSerializer()->deserialize(
+            FixturesLoader::load('Intervals/SuccessDatesResponse.xml'),
+            IntervalsDatesResponse::class,
+            'xml'
+        );
+
+        $this->assertNotEmpty($response->getItems());
+        $this->assertSame(2, $response->getCount());
+        $this->assertCount(2, $response->getItems());
+        $this->assertCount(2, $response);
+        $this->assertContainsOnlyInstancesOf(DateIntervals::class, $response->getItems());
+
+        $dateInterval = $response->getItems()[0];
+        $date = \DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2025-10-13 00:00:00');
+        $this->assertEquals($date->getTimestamp(), $dateInterval->getValue()->setTime(0, 0)->getTimestamp());
+
+        $intervals = $dateInterval->getIntervals();
+        $this->assertNotEmpty($intervals->getItems());
+        $this->assertSame(2, $intervals->getCount());
+        $this->assertCount(2, $intervals->getItems());
+        $this->assertCount(2, $intervals);
+
+        $interval = $intervals->getItems()[0];
+        $this->assertContainsOnlyInstancesOf(Interval::class, $intervals->getItems());
+        $this->assertSame('basic', $interval->getType());
+        $this->assertSame(0, $interval->getZone());
+        $this->assertSame(1, $interval->getService());
+        $this->assertSame('9', $interval->getTimeMin());
+        $this->assertSame('22', $interval->getTimeMax());
     }
 
     public function testSuccessfulRegionDeSerialization()

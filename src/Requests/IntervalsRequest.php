@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DalliSDK\Requests;
 
+use DalliSDK\Responses\IntervalsDatesResponse;
 use DalliSDK\Responses\IntervalsResponse;
 use JMS\Serializer\Annotation as JMS;
 
@@ -17,6 +18,17 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
 {
     public const RESPONSE_CLASS = IntervalsResponse::class;
 
+    public const OUTPUT_INTERVALS = 'intervals';
+    public const OUTPUT_DATES = 'dates';
+
+    public function getResponseClass(): string
+    {
+        if ($this->output === self::OUTPUT_DATES) {
+            return IntervalsDatesResponse::class;
+        }
+
+        return parent::getResponseClass();
+    }
     /**
      * Полный адрес доставки, для которого вы хотите получить интервал.
      * Рекомендуем использовать его для более точного определения доступных интервалов
@@ -45,7 +57,7 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
      * @JMS\Type("string")
      * @JMS\SerializedName("output")
      */
-    private string $output = 'intervals';
+    private string $output = self::OUTPUT_INTERVALS;
 
     /**
      * Зона, интервалы которой, вы хотите получить
@@ -117,6 +129,61 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
         $this->output = $output;
         $this->strict = $strict;
     }
+
+    public function setAddress(?string $address): IntervalsRequest
+    {
+        $this->address = $address;
+        return $this;
+    }
+
+    public function setStrict(string $strict): IntervalsRequest
+    {
+        $this->strict = $strict;
+        return $this;
+    }
+
+    public function setOutput(string $output): IntervalsRequest
+    {
+        $this->output = $output;
+        return $this;
+    }
+
+    public function setZone(?int $zone): IntervalsRequest
+    {
+        $this->zone = $zone;
+        return $this;
+    }
+
+    public function setTown(?string $town): IntervalsRequest
+    {
+        $this->town = $town;
+        return $this;
+    }
+
+    public function setFias(?string $fias): IntervalsRequest
+    {
+        $this->fias = $fias;
+        return $this;
+    }
+
+    public function setService(?int $service): IntervalsRequest
+    {
+        $this->service = $service;
+        return $this;
+    }
+
+    public function setFilial(?int $filial): IntervalsRequest
+    {
+        $this->filial = $filial;
+        return $this;
+    }
+
+    public function setDate(?\DateTimeInterface $date): IntervalsRequest
+    {
+        $this->date = $date;
+        return $this;
+    }
+
 
     /**
      * @return string|null
