@@ -20,8 +20,10 @@ class PriceTest extends TestCase
             'service' => 1,
             'msg' => 'Сообщение',
             'type' => 2,
+            'typeDelivery' => 'KUR',
         ]);
     }
+
 
     public function testGetType()
     {
@@ -53,6 +55,11 @@ class PriceTest extends TestCase
         $this->assertSame('Сообщение', $this->sut->getMsg());
     }
 
+    public function testGetTypeDelivery()
+    {
+        $this->assertSame('KUR', $this->sut->getTypeDelivery());
+    }
+
     public function testAllIsNull()
     {
         $price = new Price();
@@ -62,5 +69,6 @@ class PriceTest extends TestCase
         $this->assertNull($price->getPrice());
         $this->assertNull($price->getDeliveryPeriod());
         $this->assertNull($price->getType());
+        $this->assertNull($price->getTypeDelivery());
     }
 }

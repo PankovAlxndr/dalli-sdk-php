@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DalliSDK\Requests;
 
+use DalliSDK\Models\PackageDeliveryCost;
 use DalliSDK\Responses\DeliveryCostResponse;
 use JMS\Serializer\Annotation as JMS;
 
@@ -70,8 +71,17 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
     private ?int $cdekCityId = null;
 
     /**
+     * Код города в системе YANDEX (можно указывать только при доставке YANDEX)
+     *
+     * @JMS\Type("int")
+     * @JMS\SerializedName("boxberrycityid")
+     */
+    private ?int $boxberryCityId = null;
+
+    /**
      * Область
      *
+     * @deprecated Не рекомендуется
      * @JMS\Type("string")
      * @JMS\SerializedName("oblname")
      */
@@ -95,7 +105,7 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
     private ?string $senderCode = null;
 
     /**
-     * Стоимость заказа
+     * Сумма наложенного платежа
      *
      * @JMS\Type("int")
      */
@@ -159,6 +169,7 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
      */
     private ?string $withoutTax = null;
 
+
     /**
      * Меняет формат ответа
      *  x2 - расширенный формат. Обязателен для Почты России
@@ -167,6 +178,19 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
      * @JMS\SerializedName("output")
      */
     private ?string $output = null;
+
+
+    /**
+     * Контейнер товарных мест
+     *
+     * @JMS\Type("array<DalliSDK\Models\PackageDeliveryCost>")
+     * @JMS\XmlList(entry = "package")
+     * @JMS\SerializedName("packages")
+     *
+     * @var PackageDeliveryCost[]
+     */
+    private ?array $packages = null;
+
 
     /**
      * @return string|null
@@ -306,7 +330,27 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
     }
 
     /**
+     * @return int|null
+     */
+    public function getYandexCityId(): ?int
+    {
+        return $this->boxberryCityId;
+    }
+
+    /**
+     * @param int|null $boxberryCityId
+     *
+     * @return DeliveryCostRequest
+     */
+    public function setYandexCityId(?int $boxberryCityId): DeliveryCostRequest
+    {
+        $this->boxberryCityId = $boxberryCityId;
+        return $this;
+    }
+
+    /**
      * @return string|null
+     * @deprecated Не рекомендуется
      */
     public function getOblName(): ?string
     {
@@ -315,6 +359,7 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
 
     /**
      * @param string|null $oblName
+     * @deprecated Не рекомендуется
      *
      * @return DeliveryCostRequest
      */
@@ -530,6 +575,41 @@ class DeliveryCostRequest extends AbstractRequest implements RequestInterface
     public function setOutput(?string $output): DeliveryCostRequest
     {
         $this->output = $output;
+        return $this;
+    }
+
+    /**
+     * @return PackageDeliveryCost[]|null
+     */
+    public function getPackages(): ?array
+    {
+        return $this->packages;
+    }
+
+    /**
+     * @param PackageDeliveryCost[]|null $packages
+     *
+     * @return DeliveryCostRequest
+     */
+    public function setPackages(?array $packages): DeliveryCostRequest
+    {
+        $this->packages = $packages;
+        return $this;
+    }
+
+    /**
+     * @param PackageDeliveryCost $package
+     *
+     * @return DeliveryCostRequest
+     */
+    public function addPackage(PackageDeliveryCost $package): DeliveryCostRequest
+    {
+        if ($this->packages === null) {
+            $this->packages = [];
+        }
+
+        $this->packages[] = $package;
+
         return $this;
     }
 }

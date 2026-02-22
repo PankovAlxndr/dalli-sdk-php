@@ -17,4 +17,5 @@ class Partner
     public const PICKPOINT = 'PICKPOINT';
     public const POST_5 = '5POST';
     public const RUPOST = 'RUPOST';
+    public const YANDEX = 'YANDEX';
 }

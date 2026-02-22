@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <intervals>
+    <strict>F</strict>
+    <output>intervals</output>
     <zone>1</zone>
     <service>11</service>
     <date>2022-12-31</date>

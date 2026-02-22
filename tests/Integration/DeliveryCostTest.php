@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace DalliSDK\Test\Integration;
 
 use DalliSDK\Enums\Partner;
+use DalliSDK\Models\Package;
+use DalliSDK\Models\PackageDeliveryCost;
 use DalliSDK\Models\Price;
 use DalliSDK\Requests\DeliveryCostRequest;
 use DalliSDK\Responses\DeliveryCostResponse;
@@ -34,9 +36,39 @@ class DeliveryCostTest extends SerializerTestCase
             ->setTownTo('Town to')
             ->setPvzCode('pvz code')
             ->setCdekCityId(44)
+            ->setYandexCityId(95)
             ->setWithoutTax('YES')
             ->setOutput('x2')
             ->setSenderCode('RU34234');
+
+        $request->addPackage(
+            (new PackageDeliveryCost())
+                ->setWidth(10)
+                ->setHeight(10)
+                ->setLength(10)
+                ->setWeight(10)
+        );
+
+        $request->addPackage(
+            (new PackageDeliveryCost())
+                ->setWidth(11)
+                ->setHeight(11)
+                ->setLength(11)
+                ->setWeight(11),
+        );
+        $request->setPackages([
+            (new PackageDeliveryCost())
+                ->setWidth(10)
+                ->setHeight(10)
+                ->setLength(10)
+                ->setWeight(10),
+            (new PackageDeliveryCost())
+                ->setWidth(11)
+                ->setHeight(11)
+                ->setLength(11)
+                ->setWeight(11),
+        ]);
+
 
         $this->assertSame(Partner::SDEK, $request->getPartner());
         $this->assertSame('0c5b2444-70a0-4932-980c-b4dc0d3f02b5', $request->getFias());
@@ -57,7 +89,11 @@ class DeliveryCostTest extends SerializerTestCase
         $this->assertSame('Town to', $request->getTownTo());
         $this->assertSame('pvz code', $request->getPvzCode());
         $this->assertSame(44, $request->getCdekCityId());
+        $this->assertSame(95, $request->getYandexCityId());
         $this->assertSame('RU34234', $request->getSenderCode());
+
+        $this->assertCount(2, $request->getPackages());
+        $this->assertContainsOnlyInstancesOf(PackageDeliveryCost::class, $request->getPackages());
 
         $this->assertSameXml($xml, $request);
     }
@@ -72,7 +108,14 @@ class DeliveryCostTest extends SerializerTestCase
         );
         $this->assertSame('DS', $response->getPartner());
         $this->assertSame('Москва, Складочная 1 стр 18', $response->getTownTo());
-        $this->assertSame('MSK', $response->getZone());
+        $this->assertSame('0', $response->getZone());
+        $this->assertSame(20, $response->getVatRate());
+        $this->assertSame('1', $response->getDeliveryPeriod());
+        $this->assertSame(1, $response->getPrice());
+        $this->assertSame('KUR', $response->getTypeDelivery());
+        $this->assertSame(1, $response->getService());
+        $this->assertSame(1, $response->getToFilial());
+        $this->assertSame(110, $response->getDays());
 
         $this->assertNotEmpty($response->getItems());
         $this->assertCount(3, $response->getItems());

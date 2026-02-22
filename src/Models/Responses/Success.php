@@ -24,10 +24,28 @@ class Success
     private string $barcode;
 
     /**
+     * Содержит код типа доставки
+     * @see https://api.dalli-service.com/doc/v1/services
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("int")
+     * @JMS\SerializedName("service")
+     */
+    private ?int $service = null;
+
+    /**
      * @return string
      */
     public function getBarcode(): string
     {
         return $this->barcode;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getService(): ?int
+    {
+        return $this->service;
     }
 }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedules count="1">
+    <days id="12" Monday="T" Tuesday="T" Wednesday="T" Thursday="T" Friday="T" Saturday="T" Sunday="F"/>
+</schedules>

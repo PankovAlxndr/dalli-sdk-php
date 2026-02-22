@@ -31,6 +31,8 @@ class ItemTest extends TestCase
             'suppPhone' => '+7(000)000-00-00',
             'suppINN' => '3664069397',
             'governmentCode' => '8708 30',
+            'govType' => '1',
+            'textArticle' => 'foobar',
             'type' => 1,
             'extCode' => '123213123',
             'extraTags' => '{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}'
@@ -132,6 +134,18 @@ class ItemTest extends TestCase
         $this->assertSame('{"tag1262":"020","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=00000000XXXXXX"}', $this->sut->getExtraTags());
     }
 
+    public function testGetGovType()
+    {
+        $this->assertSame('1', $this->sut->getGovType());
+    }
+
+    public function testGetTextArticle()
+    {
+        $this->assertSame('foobar', $this->sut->getTextArticle());
+    }
+
+
+
     public function testSetMass()
     {
         $this->sut->setMass(555.55);
@@ -172,5 +186,17 @@ class ItemTest extends TestCase
     {
         $this->sut->setExtCode('{"tag1262":"0210","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=99"}');
         $this->assertSame('{"tag1262":"0210","tag1263":"14.12.2018","tag1264":"1556","tag1265":"sid=99"}', $this->sut->getExtraTags());
+    }
+
+    public function testSetGovType()
+    {
+        $this->sut->setGovType('2');
+        $this->assertSame('2', $this->sut->getGovType());
+    }
+
+    public function testSetTextArticle()
+    {
+        $this->sut->setTextArticle('dummy');
+        $this->assertSame('dummy', $this->sut->getTextArticle());
     }
 }

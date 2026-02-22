@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pickupcreate>
+    <pickup code='123'>
+        <success barcode='T7754280' service='5'/>
+        <success barcode='T7754281' service='7'/>
+    </pickup>
+    <pickup code='1234'>
+        <success barcode='T7754282' service='5'/>
+    </pickup>
+    <pickup code='12345'>
+        <error errorCode='4' errorMessage='оформление недоступно' />
+    </pickup>
+</pickupcreate>

@@ -18,6 +18,36 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
     public const RESPONSE_CLASS = IntervalsResponse::class;
 
     /**
+     * Полный адрес доставки, для которого вы хотите получить интервал.
+     * Рекомендуем использовать его для более точного определения доступных интервалов
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("address")
+     */
+    private ?string $address;
+
+    /**
+     * Принимает значения "T" и "F" (по умолчанию).
+     * Если "T", то вы получите ошибку при некорректном заполнении города, ФИАС или адреса,
+     * а не все доступные интервалы всех регионов
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("strict")
+     */
+    private string $strict = 'F';
+
+    /**
+     * Может принимать значения intervals (по умолчанию) и dates.
+     * Во втором случае, вы получите список дат, на которые можно передать заказ,
+     * и список доступных интервалов для каждой из них.
+     * Для этого формата вывода можно использовать все параметры метода, описанные ниже, кроме даты
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("output")
+     */
+    private string $output = 'intervals';
+
+    /**
      * Зона, интервалы которой, вы хотите получить
      *
      * @JMS\Type("int")
@@ -72,7 +102,10 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
         ?string $town = null,
         ?string $fias = null,
         ?\DateTimeInterface $date = null,
-        ?int $filial = null
+        ?int $filial = null,
+        ?string $address = null,
+        ?string $output = 'intervals',
+        ?string $strict = 'F'
     ) {
         $this->service = $service;
         $this->zone = $zone;
@@ -80,6 +113,17 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
         $this->fias = $fias;
         $this->date = $date;
         $this->filial = $filial;
+        $this->address = $address;
+        $this->output = $output;
+        $this->strict = $strict;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAddress(): ?string
+    {
+        return $this->address;
     }
 
     /**
@@ -125,5 +169,15 @@ class IntervalsRequest extends AbstractRequest implements RequestInterface
     public function getFilial(): ?int
     {
         return $this->filial;
+    }
+
+    public function getStrict(): string
+    {
+        return $this->strict;
+    }
+
+    public function getOutput(): string
+    {
+        return $this->output;
     }
 }

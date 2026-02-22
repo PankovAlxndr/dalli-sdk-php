@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pickupcreate>
+    <pickup>
+        <code>123</code>
+        <date>2023-12-22</date>
+        <return>YES</return>
+        <instruction>На въезде необходимо предъявить пропуск</instruction>
+    </pickup>
+    <pickup>
+        <code>1234</code>
+        <date>2023-12-23</date>
+        <return>NO</return>
+        <instruction>Оранжевая вывеска "Корпорация праздник"</instruction>
+    </pickup>
+</pickupcreate>

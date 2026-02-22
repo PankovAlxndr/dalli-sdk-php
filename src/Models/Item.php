@@ -83,6 +83,17 @@ class Item
 
 
     /**
+     * Артикул товара. Поле можно использовать под свои нужды,
+     * не идет в отчеты и чеки, 200 символов
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("string")
+     * @JMS\SerializedName("textArticle")
+     */
+    private ?string $textArticle = null;
+
+
+    /**
      * Ставка НДС - целое число процентов. Если значение не указано, подставляется значение "20".
      * Значение "0" означает ставку "Без НДС", ставка "0%" на данный момент не поддерживается.
      *
@@ -155,6 +166,17 @@ class Item
      * @JMS\SerializedName("governmentcode")
      */
     private ?string $governmentCode = null;
+
+    /**
+     * Тип маркировки товара.
+     * 1 - Честный знак. По умолчанию
+     * 2 - ГИИС ДМДК
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("string")
+     * @JMS\SerializedName("govType")
+     */
+    private ?string $govType = null;
 
     /**
      * Тип вложения. Принимает значения:
@@ -481,6 +503,25 @@ class Item
     }
 
     /**
+     * @return string|null
+     */
+    public function getGovType(): ?string
+    {
+        return $this->govType;
+    }
+
+    /**
+     * @param string|null $governmentCode
+     *
+     * @return Item
+     */
+    public function setGovType(?string $govType): Item
+    {
+        $this->govType = $govType;
+        return $this;
+    }
+
+    /**
      * @return int
      */
     public function getType(): int
@@ -553,6 +594,25 @@ class Item
     public function setExtraTags(?string $extraTags): Item
     {
         $this->extraTags = $extraTags;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTextArticle(): ?string
+    {
+        return $this->textArticle;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return Item
+     */
+    public function setTextArticle(string $textArticle): Item
+    {
+        $this->textArticle = $textArticle;
         return $this;
     }
 }

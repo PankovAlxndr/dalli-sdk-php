@@ -24,13 +24,15 @@ use DalliSDK\Responses\DeliveryCostResponse;
 use DalliSDK\Responses\EditBasketResponse;
 use DalliSDK\Responses\FilialsResponse;
 use DalliSDK\Responses\GetBasketResponse;
+use DalliSDK\Responses\GetPickupAddressesResponse;
 use DalliSDK\Responses\IntervalsResponse;
 use DalliSDK\Responses\OrderDeliveryStatusResponse;
+use DalliSDK\Responses\PickupCreateResponse;
 use DalliSDK\Responses\PointResponse;
-use DalliSDK\Responses\PolygonsResponse;
 use DalliSDK\Responses\RawDataResponse;
 use DalliSDK\Responses\RemoveBasketResponse;
 use DalliSDK\Responses\RuPostResponse;
+use DalliSDK\Responses\SchedulesResponse;
 use DalliSDK\Responses\SendToDeliveryResponse;
 use DalliSDK\Responses\ServicesResponse;
 use DalliSDK\Responses\SimpleResponse;
@@ -73,6 +75,11 @@ use Psr\Http\Client\ClientExceptionInterface;
  *
  * @method ActTransferMoneyResponse                 sendActTransferMoneyRequest(Requests\Act\TransferMoney\ActTransferMoneyRequest $request)
  * @method ActTransferReturnResponse                sendActTransferReturnRequest(Requests\Act\TransferReturn\ActTransferReturnRequest $request)
+ *
+ * @method GetPickupAddressesResponse               sendGetPickupAddressesRequest(Requests\GetPickupAddressesRequest $request)
+ * @method PickupCreateResponse                     sendPickupCreateRequest(Requests\PickupCreateRequest $request)
+ *
+ * @method SchedulesResponse                        sendSchedules(Requests\SchedulesRequest $request)
  */
 class Client
 {

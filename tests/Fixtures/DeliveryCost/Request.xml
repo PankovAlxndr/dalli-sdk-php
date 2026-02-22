@@ -7,6 +7,7 @@
     <kladr>kladr</kladr>
     <pvzcode>pvz code</pvzcode>
     <cdekcityid>44</cdekcityid>
+    <boxberrycityid>95</boxberrycityid>
     <oblname>Ярославкая</oblname>
     <weight>25.3</weight>
     <sendercode>RU34234</sendercode>
@@ -19,4 +20,8 @@
     <typedelivery>PVZ</typedelivery>
     <withouttax>YES</withouttax>
     <output>x2</output>
+    <packages>
+        <package weight="10.0" length="10.0" width="10.0" height="10.0" />
+        <package weight="11.0" length="11.0" width="11.0" height="11.0" />
+    </packages>
 </deliverycost>

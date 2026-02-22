@@ -24,7 +24,7 @@ class Error
      * @JMS\Type("string")
      * @JMS\SerializedName("error")
      */
-    private string $error;
+    private ?string $error = null;
 
     /**
      * Код ошибки
@@ -33,7 +33,7 @@ class Error
      * @JMS\Type("int")
      * @JMS\SerializedName("errorCode")
      */
-    private int $errorCode;
+    private ?int $errorCode = null;
 
     /**
      * Сообщение об ошибке
@@ -42,28 +42,28 @@ class Error
      * @JMS\Type("string")
      * @JMS\SerializedName("errorMessage")
      */
-    private string $errorMessage;
+    private ?string $errorMessage = null;
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getError(): string
+    public function getError(): ?string
     {
         return $this->error;
     }
 
     /**
-     * @return int
+     * @return null|int
      */
-    public function getErrorCode(): int
+    public function getErrorCode(): ?int
     {
         return $this->errorCode;
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getErrorMessage(): string
+    public function getErrorMessage(): ?string
     {
         return $this->errorMessage;
     }

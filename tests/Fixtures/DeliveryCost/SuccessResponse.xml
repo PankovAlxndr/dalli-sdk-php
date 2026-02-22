@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<deliverycost partner="DS" townto="Москва, Складочная 1 стр 18" zone="MSK">
+<deliverycost days_id="110" partner="DS" townto="Москва, Складочная 1 стр 18" to_filial="1" service="1" typedelivery="KUR" price="1" delivery_period="1" msg="Доставка на следующий день после передачи заказа в курьерскую службу. Стоимость включает 20% НДС" zone="0" VATrate="20" >
     <price service="1" price="255" delivery_period="0-1" msg="Доставка на следующий день после передачи заказа в курьерскую службу" zone="0" />
     <price service="2" price="365" delivery_period="0-1" msg="Экспресс доставка день в день" zone="0" />
     <price service="4" price="95" delivery_period="0-1" msg="Доставка на следующий день после передачи заказа в курьерскую службу" zone="0" />
 </deliverycost>
+

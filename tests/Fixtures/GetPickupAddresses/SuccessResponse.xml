@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<getPickupAddresses count='2'>
+    <address code='123'>
+        <active>0</active>
+        <address>Москва, Тверская, 7</address>
+        <time_min>21:00</time_min>
+        <time_max>22:00</time_max>
+        <phone>89178365783</phone>
+    </address>
+    <address code='1234'>
+        <active>1</active>
+        <address>Москва, Новый Арбат, 38</address>
+        <time_min>10:00</time_min>
+        <time_max>20:00</time_max>
+        <phone>89164783496</phone>
+    </address>
+</getPickupAddresses>

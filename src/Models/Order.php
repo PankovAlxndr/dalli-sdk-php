@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DalliSDK\Models;
 
+use DalliSDK\Models\Ads\Ads;
 use DalliSDK\Models\Responses\Error;
 use DalliSDK\Traits\Fillable;
 use JMS\Serializer\Annotation as JMS;
@@ -52,6 +53,15 @@ class Order
      * @JMS\SerializedName("department")
      */
     private ?string $department = null;
+
+    /**
+     * Код склада возврата
+     * Чтобы получить код склада - обратитесь к вашему менеджеру
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("costcode")
+     */
+    private ?string $costCode = null;
 
     /**
      * Код адреса забора.
@@ -150,6 +160,14 @@ class Order
     private ?string $upsnak = null;
 
     /**
+     * Если включено, то курьер отсканирует у получателя код из приложения Wildberries (T - нужно сканирование)
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("scanWB")
+     */
+    private ?string $scanWB = null;
+
+    /**
      * Поручение, примечание для курьера
      *
      * @JMS\Type("string")
@@ -168,6 +186,18 @@ class Order
      * @JMS\SerializedName("acceptpartially")
      */
     private ?string $acceptpartially = null;
+
+    /**
+     * Корневой контейнер с дополнительными услугами
+     *
+     *  <ads>
+     *    <climb type="stairs" floor="5"/>
+     *  </ads>
+     *
+     * @JMS\Type("DalliSDK\Models\Ads\Ads")
+     * @JMS\SerializedName("ads")
+     */
+    private ?Ads $ads = null;
 
     /**
      * Настройка дифференциальной стоимости доставки
@@ -284,6 +314,25 @@ class Order
     public function setSenderCode(?string $senderCode): Order
     {
         $this->senderCode = $senderCode;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCostCode(): ?string
+    {
+        return $this->costCode;
+    }
+
+    /**
+     * @param string|null $senderCode
+     *
+     * @return Order
+     */
+    public function setCostCode(?string $senderCode): Order
+    {
+        $this->costCode = $senderCode;
         return $this;
     }
 
@@ -439,6 +488,24 @@ class Order
         $this->upsnak = $upsnak;
         return $this;
     }
+    /**
+     * @return string|null
+     */
+    public function getScanWB(): ?string
+    {
+        return $this->scanWB;
+    }
+
+    /**
+     * @param string|null $upsnak
+     *
+     * @return Order
+     */
+    public function setScanWB(?string $scanWB): Order
+    {
+        $this->scanWB = $scanWB;
+        return $this;
+    }
 
     /**
      * @return string|null
@@ -578,6 +645,25 @@ class Order
     public function setRuPostType(?int $ruPostType): Order
     {
         $this->ruPostType = $ruPostType;
+        return $this;
+    }
+
+    /**
+     * @return Ads|null
+     */
+    public function getAds(): ?Ads
+    {
+        return $this->ads;
+    }
+
+    /**
+     * @param Ads|null $ads
+     *
+     * @return Order
+     */
+    public function setAds(?Ads $ads): Order
+    {
+        $this->ads = $ads;
         return $this;
     }
 }

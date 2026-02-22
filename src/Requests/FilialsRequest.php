@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Запрос списка филиалов компании Dalli
  *
- * @see https://api.dalli-service.com/v1/doc/filials
+ * @see https://api.dalli-service.com/doc/v1/filials
  * @JMS\XmlRoot("filials")
  */
 class FilialsRequest extends AbstractRequest implements RequestInterface

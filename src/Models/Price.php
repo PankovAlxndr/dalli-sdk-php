@@ -25,6 +25,18 @@ class Price
      */
     private ?int $type = null;
 
+
+    /**
+     * Тип доставки, может принимать значения (бесполезен при output x2):
+     * KUR - курьерская доставка
+     * PVZ - пункт выдачи заказов (ПВЗ)
+     *
+     * @JMS\XmlAttribute()
+     * @JMS\Type("string")
+     * @JMS\SerializedName("typedelivery")
+     */
+    private ?string $typeDelivery = null;
+
     /**
      * Режим доставки (тип услуги) передается код из соответствующего справочника
      *
@@ -72,6 +84,14 @@ class Price
     public function getType(): ?int
     {
         return $this->type;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTypeDelivery(): ?string
+    {
+        return $this->typeDelivery;
     }
 
     /**

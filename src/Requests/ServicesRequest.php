@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Запрос типов доставки
  *
- * @see https://api.dalli-service.com/v1/doc/request-types-of-delivery
+ * @see https://api.dalli-service.com/doc/v1/services
  * @JMS\XmlRoot("services")
  */
 class ServicesRequest extends AbstractRequest implements RequestInterface

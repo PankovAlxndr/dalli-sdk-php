@@ -22,10 +22,40 @@ class IntervalsTest extends SerializerTestCase
         $this->assertNull($request->getTown());
         $this->assertNull($request->getFias());
         $this->assertNull($request->getFilial());
+        $this->assertNull($request->getAddress());
+        $this->assertSame('F', $request->getStrict());
+        $this->assertSame('intervals', $request->getOutput());
         $this->assertSame(
             \DateTime::createFromFormat('Y-m-d H:i:s', '2022-12-31 00:00:00')->getTimestamp(),
             $request->getDate()->getTimestamp()
         );
+        $this->assertSameXml($xml, $request);
+    }
+
+    public function testSuccessfulAddressSerialization()
+    {
+        $xml = FixturesLoader::load('Intervals/AddressRequest.xml');
+        $request = new IntervalsRequest(
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            'Москва',
+            'dates',
+            'T'
+        );
+        $this->assertSame(IntervalsResponse::class, $request->getResponseClass());
+
+        $this->assertNull($request->getZone());
+        $this->assertNull($request->getService());
+        $this->assertNull($request->getTown());
+        $this->assertNull($request->getFias());
+        $this->assertNull($request->getFilial());
+        $this->assertSame('Москва', $request->getAddress());
+        $this->assertSame('T', $request->getStrict());
+        $this->assertSame('dates', $request->getOutput());
         $this->assertSameXml($xml, $request);
     }
 

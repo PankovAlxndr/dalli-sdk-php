@@ -6,6 +6,8 @@ namespace DalliSDK\Test\Unit\Models;
 
 use DalliSDK\Enums\PayType;
 use DalliSDK\Enums\RuPost;
+use DalliSDK\Models\Ads\Ads;
+use DalliSDK\Models\Ads\Climb;
 use DalliSDK\Models\Below;
 use DalliSDK\Models\DeliverySet;
 use DalliSDK\Models\Item;
@@ -62,6 +64,9 @@ class OrderTest extends TestCase
             ->setSuppInn('3664069397')
             ->setType(1);
 
+        $ads = new Ads();
+        $ads->setClimb((new Climb())->setFloor(15)->setType('elevator'));
+
         $this->sut = Order::create([
             'barcode' => 'A6015712',
             'number' => 'sdk-006',
@@ -90,6 +95,7 @@ class OrderTest extends TestCase
                     'height' => 400.0,
                     'message' => 'Корневой контейнер',
                 ])],
+            'ads' => $ads,
             'errors' => [
                 Error::create([
                     'error' => 'item',
@@ -103,6 +109,18 @@ class OrderTest extends TestCase
     {
         $this->sut->setPriced(11.0);
         $this->assertSame(11.0, $this->sut->getPriced());
+    }
+
+    public function testSetAds()
+    {
+
+        $ads = Ads::create([
+            'climb' => (new Climb())->setFloor(15)->setType('elevator')
+        ]);
+
+        $this->sut->setAds($ads);
+        $this->assertInstanceOf(Ads::class, $this->sut->getAds());
+        $this->assertInstanceOf(Climb::class, $this->sut->getAds()->getClimb());
     }
 
     public function testSetDeliverySet()
@@ -297,5 +315,17 @@ class OrderTest extends TestCase
     {
         $this->sut->setSenderCode('AS332341');
         $this->assertSame('AS332341', $this->sut->getSenderCode());
+    }
+
+    public function testSetCostCode()
+    {
+        $this->sut->setCostCode('foo');
+        $this->assertSame('foo', $this->sut->getCostCode());
+    }
+
+    public function testSetScanWb()
+    {
+        $this->sut->setScanWB('001');
+        $this->assertSame('001', $this->sut->getScanWB());
     }
 }
